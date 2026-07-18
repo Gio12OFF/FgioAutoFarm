@@ -1,5 +1,27 @@
 -- Обфусцированный скрипт
-local a=game:GetService("Players");local b=a.LocalPlayer;local c=Instance.new;local d=c("ScreenGui");d.Name="LoadingScreen";d.ResetOnSpawn=false;d.Parent=b:WaitForChild("PlayerGui");local e=c("Frame");e.Size=UDim2.new(0,500,0,380);e.Position=UDim2.new(0.5,-250,0.5,-190);e.BackgroundColor3=Color3.fromRGB(40,10,30);e.BorderSizePixel=0;e.Parent=d;local f=c("UICorner");f.CornerRadius=UDim.new(0,10);f.Parent=e;local g=c("TextLabel");g.Size=UDim2.new(1,-20,1,-60);g.Position=UDim2.new(0,10,0,10);g.BackgroundTransparency=1;g.TextColor3=Color3.fromRGB(255,100,200);g.Text=[[
+local function ObfuscatedScript()
+local A=game:GetService("Players")
+local B=A.LocalPlayer
+local C=Instance.new
+local D=C("ScreenGui")
+D.Name="LoadingScreen"
+D.ResetOnSpawn=false
+D.Parent=B:WaitForChild("PlayerGui")
+local E=C("Frame")
+E.Size=UDim2.new(0,500,0,380)
+E.Position=UDim2.new(0.5,-250,0.5,-190)
+E.BackgroundColor3=Color3.fromRGB(40,10,30)
+E.BorderSizePixel=0
+E.Parent=D
+local F=C("UICorner")
+F.CornerRadius=UDim.new(0,10)
+F.Parent=E
+local G=C("TextLabel")
+G.Size=UDim2.new(1,-20,1,-60)
+G.Position=UDim2.new(0,10,0,10)
+G.BackgroundTransparency=1
+G.TextColor3=Color3.fromRGB(255,100,200)
+G.Text=[[
                             ....:#+..                                                               
                            ..#....:#-..=+...                                                        
                            .==..  ..+*-+.-#-.            ....:+##*.                                 
@@ -51,4 +73,551 @@ local a=game:GetService("Players");local b=a.LocalPlayer;local c=Instance.new;lo
                                   ...=#:::-%=:::::::+#...                                           
                                      .%:...%:.......#...                                            
                                      ..*%##%%.....-%:..
-]];g.Font=Enum.Font.Code;g.TextSize=7;g.TextXAlignment=Enum.TextXAlignment.Center;g.TextYAlignment=Enum.TextYAlignment.Center;g.Parent=e;local h=c("TextLabel");h.Size=UDim2.new(1,0,0,20);h.Position=UDim2.new(0,0,1,-50);h.BackgroundTransparency=1;h.TextColor3=Color3.fromRGB(255,150,220);h.Text="Загрузка";h.Font=Enum.Font.GothamBold;h.TextSize=14;h.Parent=e;local i=c("Frame");i.Size=UDim2.new(0,250,0,4);i.Position=UDim2.new(0.5,-125,1,-25);i.BackgroundColor3=Color3.fromRGB(60,20,50);i.BorderSizePixel=0;i.Parent=e;local j=c("UICorner");j.CornerRadius=UDim.new(0,2);j.Parent=i;local k=c("Frame");k.Size=UDim2.new(0,0,1,0);k.BackgroundColor3=Color3.fromRGB(255,100,200);k.BorderSizePixel=0;k.Parent=i;local l=c("UICorner");l.CornerRadius=UDim.new(0,2);l.Parent=k;task.spawn(function()local m=game:GetService("TweenService");local n=m:Create(k,TweenInfo.new(2.5,Enum.EasingStyle.Linear),{Size=UDim2.new(1,0,1,0)});n:Play();local o={".","..","...","....","....."};for p=1,10 do local q=((p-1)%5)+1;h.Text="Загрузка"..o[q];task.wait(0.25)end;h.Text="Готово! ✨";task.wait(0.5);d:Destroy();loadMainGUI()end);function loadMainGUI()if b.PlayerGui:FindFirstChild("AutoFarmGUI_Main")then b.PlayerGui:FindFirstChild("AutoFarmGUI_Main"):Destroy()end;if b.PlayerGui:FindFirstChild("WatermarkGUI")then b.PlayerGui:FindFirstChild("WatermarkGUI"):Destroy()end;local r=game:GetService("Players");local s=r.LocalPlayer;local t=game:GetService("TweenService");local u=game:GetService("RunService");local v=game:GetService("Stats");local w=game:GetService("UserInputService");local x=false;local y=c("ScreenGui");y.Name="WatermarkGUI";y.ResetOnSpawn=false;y.Parent=s:WaitForChild("PlayerGui");y.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;local z=c("Frame");z.Size=UDim2.new(0,480,0,45);z.Position=UDim2.new(0,10,0,10);z.BackgroundColor3=Color3.fromRGB(0,0,0);z.BackgroundTransparency=0.6;z.BorderSizePixel=0;z.Parent=y;local A=c("UICorner");A.CornerRadius=UDim.new(0,10);A.Parent=z;local B=c("ImageLabel");B.Size=UDim2.new(0,35,0,35);B.Position=UDim2.new(0,5,0.5,-17.5);B.BackgroundTransparency=1;B.Image="rbxassetid://14868125445";B.Parent=z;local C=c("TextLabel");C.Size=UDim2.new(1,-50,1,0);C.Position=UDim2.new(0,45,0,0);C.BackgroundTransparency=1;C.TextColor3=Color3.fromRGB(255,150,220);C.Text="Fgio AutoFarm | Статус: ❌ | FPS: 0 | Ping: 0ms";C.Font=Enum.Font.GothamBold;C.TextSize=14;C.TextXAlignment=Enum.TextXAlignment.Left;C.TextYAlignment=Enum.TextYAlignment.Center;C.Parent=z;local function D(E)x=E end;local F=0;local G=tick();local function H()F=F+1;local I=tick();if I-G>=1 then local J=F;F=0;G=I;local K=math.floor(v.Network.ServerStatsItem["Data Ping"]:GetValue()*1000);if K<0 then K=0 end;local L=x and"✅"or"❌";C.Text="Fgio AutoFarm | Статус: "..L.." | FPS: "..J.." | Ping: "..K.."ms"end end;u.RenderStepped:Connect(H);local M=true;local N=nil;w.InputBegan:Connect(function(O,P)if P then return end;if O.KeyCode==Enum.KeyCode.RightAlt then M=not M;if N then N.Enabled=M end end);local Q=c("ScreenGui");Q.Name="AutoFarmGUI_Main";Q.ResetOnSpawn=false;Q.Parent=s:WaitForChild("PlayerGui");N=Q;local R=c("Frame");R.Size=UDim2.new(0,280,0,240);R.Position=UDim2.new(0,10,0,65);R.BackgroundColor3=Color3.fromRGB(45,15,35);R.BorderSizePixel=0;R.Active=true;R.Draggable=true;R.Parent=Q;local S=c("UICorner");S.CornerRadius=UDim.new(0,8);S.Parent=R;local T=c("Frame");T.Size=UDim2.new(1,4,1,4);T.Position=UDim2.new(0,-2,0,-2);T.BackgroundColor3=Color3.fromRGB(0,0,0);T.BackgroundTransparency=0.5;T.BorderSizePixel=0;T.ZIndex=-1;T.Parent=R;local U=c("UICorner");U.CornerRadius=UDim.new(0,8);U.Parent=T;local V=c("TextLabel");V.Size=UDim2.new(1,0,0,35);V.BackgroundColor3=Color3.fromRGB(60,20,45);V.TextColor3=Color3.fromRGB(255,150,255);V.Text="🌸 АВТОФАРМ";V.Font=Enum.Font.GothamBold;V.TextSize=16;V.Parent=R;local W=c("UICorner");W.CornerRadius=UDim.new(0,8);W.Parent=V;local X=c("Frame");X.Size=UDim2.new(1,-20,0,30);X.Position=UDim2.new(0,10,0,45);X.BackgroundColor3=Color3.fromRGB(55,20,45);X.BorderSizePixel=0;X.Parent=R;local Y=c("UICorner");Y.CornerRadius=UDim.new(0,4);Y.Parent=X;local Z=c("Frame");Z.Size=UDim2.new(0,10,0,10);Z.Position=UDim2.new(0,8,0.5,-5);Z.BackgroundColor3=Color3.fromRGB(255,50,150);Z.BorderSizePixel=0;Z.Parent=X;local aa=c("UICorner");aa.CornerRadius=UDim.new(1,0);aa.Parent=Z;local ab=c("TextLabel");ab.Size=UDim2.new(0,180,1,0);ab.Position=UDim2.new(0,25,0,0);ab.BackgroundTransparency=1;ab.TextColor3=Color3.fromRGB(255,200,255);ab.Text="НЕАКТИВЕН";ab.Font=Enum.Font.GothamBold;ab.TextSize=12;ab.TextXAlignment=Enum.TextXAlignment.Left;ab.Parent=X;local ac=c("Frame");ac.Size=UDim2.new(0,40,0,20);ac.Position=UDim2.new(1,-50,0.5,-10);ac.BackgroundColor3=Color3.fromRGB(80,30,65);ac.BorderSizePixel=0;ac.Parent=X;local ad=c("UICorner");ad.CornerRadius=UDim.new(1,0);ad.Parent=ac;local ae=c("Frame");ae.Size=UDim2.new(0,16,0,16);ae.Position=UDim2.new(0,2,0.5,-8);ae.BackgroundColor3=Color3.fromRGB(255,200,255);ae.BorderSizePixel=0;ae.Parent=ac;local af=c("UICorner");af.CornerRadius=UDim.new(1,0);af.Parent=ae;local ag=c("Frame");ag.Size=UDim2.new(1,-20,0,1);ag.Position=UDim2.new(0,10,0,85);ag.BackgroundColor3=Color3.fromRGB(80,30,65);ag.BorderSizePixel=0;ag.Parent=R;local ah=c("TextLabel");ah.Size=UDim2.new(1,-20,0,20);ah.Position=UDim2.new(0,10,0,90);ah.BackgroundTransparency=1;ah.TextColor3=Color3.fromRGB(255,150,220);ah.Text="⚙ НАСТРОЙКИ";ah.Font=Enum.Font.GothamBold;ah.TextSize=12;ah.TextXAlignment=Enum.TextXAlignment.Left;ah.Parent=R;local ai=c("TextLabel");ai.Size=UDim2.new(0,180,0,18);ai.Position=UDim2.new(0,10,0,112);ai.BackgroundTransparency=1;ai.TextColor3=Color3.fromRGB(255,180,230);ai.Text="Задержка между ТП (мс):";ai.Font=Enum.Font.Gotham;ai.TextSize=11;ai.TextXAlignment=Enum.TextXAlignment.Left;ai.Parent=R;local aj=c("TextBox");aj.Size=UDim2.new(0,70,0,22);aj.Position=UDim2.new(1,-80,0,110);aj.BackgroundColor3=Color3.fromRGB(60,20,50);aj.TextColor3=Color3.fromRGB(255,200,255);aj.Text="400";aj.PlaceholderText="400";aj.Font=Enum.Font.Gotham;aj.TextSize=11;aj.Parent=R;local ak=c("UICorner");ak.CornerRadius=UDim.new(0,4);ak.Parent=aj;local al=c("TextLabel");al.Size=UDim2.new(0,180,0,18);al.Position=UDim2.new(0,10,0,137);al.BackgroundTransparency=1;al.TextColor3=Color3.fromRGB(255,180,230);al.Text="Кулдаун после респавна (с):";al.Font=Enum.Font.Gotham;al.TextSize=11;al.TextXAlignment=Enum.TextXAlignment.Left;al.Parent=R;local am=c("TextBox");am.Size=UDim2.new(0,70,0,22);am.Position=UDim2.new(1,-80,0,135);am.BackgroundColor3=Color3.fromRGB(60,20,50);am.TextColor3=Color3.fromRGB(255,200,255);am.Text="4";am.PlaceholderText="4";am.Font=Enum.Font.Gotham;am.TextSize=11;am.Parent=R;local an=c("UICorner");an.CornerRadius=UDim.new(0,4);an.Parent=am;local ao=c("Frame");ao.Size=UDim2.new(1,-20,0,1);ao.Position=UDim2.new(0,10,0,165);ao.BackgroundColor3=Color3.fromRGB(80,30,65);ao.BorderSizePixel=0;ao.Parent=R;local ap=c("TextLabel");ap.Size=UDim2.new(1,-20,0,20);ap.Position=UDim2.new(0,10,0,172);ap.BackgroundTransparency=1;ap.TextColor3=Color3.fromRGB(255,200,255);ap.Text="Прогресс: 0/21 точек";ap.Font=Enum.Font.GothamBold;ap.TextSize=12;ap.TextXAlignment=Enum.TextXAlignment.Left;ap.Parent=R;local aq=c("Frame");aq.Size=UDim2.new(1,-20,0,6);aq.Position=UDim2.new(0,10,0,195);aq.BackgroundColor3=Color3.fromRGB(60,20,50);aq.BorderSizePixel=0;aq.Parent=R;local ar=c("UICorner");ar.CornerRadius=UDim.new(0,3);ar.Parent=aq;local as=c("Frame");as.Size=UDim2.new(0,0,1,0);as.BackgroundColor3=Color3.fromRGB(255,100,200);as.BorderSizePixel=0;as.Parent=aq;local at=c("UICorner");at.CornerRadius=UDim.new(0,3);at.Parent=as;local au=c("TextLabel");au.Size=UDim2.new(1,-20,0,20);au.Position=UDim2.new(0,10,0,210);au.BackgroundTransparency=1;au.TextColor3=Color3.fromRGB(255,150,220);au.Text="● Готов к запуску";au.Font=Enum.Font.Gotham;au.TextSize=11;au.TextXAlignment=Enum.TextXAlignment.Left;au.Parent=R;local av={Vector3.new(-52.9,54.6,1359.5),Vector3.new(-52.8,54.6,1374.9),Vector3.new(-46.4,54.6,2131.1),Vector3.new(-46.3,54.6,2148.2),Vector3.new(0.6,52.5,2899.8),Vector3.new(0.5,52.5,2920.7),Vector3.new(-3.3,52.5,3666.7),Vector3.new(-3.5,52.5,3688.3),Vector3.new(-7.4,52.5,4441.2),Vector3.new(-7.4,52.5,4453.3),Vector3.new(-22.4,44.7,5217.7),Vector3.new(-21.5,55.7,5228.4),Vector3.new(-37.3,61.8,5979.3),Vector3.new(-37.2,61.8,5995.9),Vector3.new(-37.7,61.8,6748.9),Vector3.new(-37.2,61.8,6765.9),Vector3.new(-33.3,61.8,7522.3),Vector3.new(-33.8,61.8,7535.6),Vector3.new(-39.3,61.8,8289.0),Vector3.new(-39.6,61.8,8309.0),Vector3.new(-54.8,-358.4,9490.7)};local aw=false;local ax=1;local ay=true;local az=false;local aA={};local aB=nil;local aC=nil;local function aD()for aE,aF in ipairs(aA)do if aF and aF.Parent then aF:Destroy()end end;aA={};for aG,aH in ipairs(av)do local aI=c("Part");aI.Name="FarmPlatform_"..aG;aI.Size=Vector3.new(10,0.5,10);aI.Anchored=true;aI.CanCollide=true;aI.Transparency=0.8;aI.Color=Color3.fromRGB(200,80,180);aI.Material=Enum.Material.SmoothPlastic;aI.Position=Vector3.new(aH.X,aH.Y-3.5,aH.Z);aI.Parent=workspace;table.insert(aA,aI)end end;local function aJ()local aK=workspace:WaitForChild("ClaimRiverResultsGold",2)if aK then fireclickdetector(aK:FindFirstChild("ClickDetector")or aK);au.Text="● Забрано золото!";return true else au.Text="● ClaimRiverResultsGold не найден";return false end end;local function aL(aM)if aC then aC:Cancel()end;local aN=aM and UDim2.new(1,-18,0.5,-8)or UDim2.new(0,2,0.5,-8);local aO=aM and Color3.fromRGB(255,100,200)or Color3.fromRGB(80,30,65);aC=t:Create(ae,TweenInfo.new(0.2,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=aN});aC:Play();t:Create(ac,TweenInfo.new(0.2),{BackgroundColor3=aO}):Play()end;local function aP(aQ,aR)local aS=math.clamp(aQ/aR,0,1);t:Create(as,TweenInfo.new(0.3),{Size=UDim2.new(aS,0,1,0)}):Play();ap.Text="Прогресс: "..aQ.."/"..aR.." точек"end;local function aT(aU)if not ay then return end;if not aw then return end;if az then return end;local aV=s.Character;if not aV or not aV:FindFirstChild("HumanoidRootPart")then ay=true;return end;ay=false;local aW=av[aU];aV.HumanoidRootPart.CFrame=CFrame.new(aW);aP(aU,#av);au.Text="● ТП "..aU.."/"..#av;if aU>=#av then az=true;au.Text="● Ожидание смерти...";ab.Text="ОЖИДАНИЕ";Z.BackgroundColor3=Color3.fromRGB(255,200,100);ay=true;local aX=s.Character;if aX and aX:FindFirstChild("Humanoid")then aX.Humanoid.Died:Connect(function()if not aw then return end;au.Text="● Ожидание респавна...";ab.Text="РЕСПАВН";Z.BackgroundColor3=Color3.fromRGB(255,150,50)end)end else local aY=tonumber(aj.Text)or 400;local aZ=math.max(aY/1000,0.1);task.delay(aZ,function()ay=true;if aw and not az then ax=ax+1;aT(ax)end end)end end;local function ba()aw=true;x=true;ay=true;az=false;ax=1;ab.Text="АКТИВЕН ✨";Z.BackgroundColor3=Color3.fromRGB(255,100,200);au.Text="● Запуск...";aP(0,#av);aL(true);aD();aT(ax)end;local function bb()aw=false;x=false;ay=true;az=false;ab.Text="НЕАКТИВЕН";Z.BackgroundColor3=Color3.fromRGB(255,50,150);au.Text="● Остановлен";aP(0,#av);aL(false);if aB then task.cancel(aB);aB=nil end;for aE,aF in ipairs(aA)do if aF and aF.Parent then aF:Destroy()end end;aA={}end;ac.InputBegan:Connect(function(aBC)if aBC.UserInputType==Enum.UserInputType.MouseButton1 then if aw then bb()else ba()end end end);s.CharacterAdded:Connect(function(aBD)if not aw then return end;if not az then return end;local aBE=tonumber(am.Text)or 4;aBE=math.max(aBE,0);ab.Text="КУЛДАУН";Z.BackgroundColor3=Color3.fromRGB(255,200,100);task.wait(0.5);local aBF=aBD:WaitForChild("HumanoidRootPart",5);if not aBF then return end;task.spawn(function()aJ()end);aB=task.spawn(function()for aBG=aBE,1,-1 do if not aw then return end;au.Text="● Кулдаун: "..aBG.."с";task.wait(1)end;if aw and az then az=false;ax=1;ay=true;ab.Text="АКТИВЕН ✨";Z.BackgroundColor3=Color3.fromRGB(255,100,200);au.Text="● Продолжаем...";aD();aT(ax)end end)end);Q.Destroying:Connect(function()aw=false;x=false;if aB then task.cancel(aB);aB=nil end;for aE,aF in ipairs(aA)do if aF and aF.Parent then aF:Destroy()end end;aA={}end);warn("🌸 AutoFarm loaded")end
+]]
+G.Font=Enum.Font.Code
+G.TextSize=7
+G.TextXAlignment=Enum.TextXAlignment.Center
+G.TextYAlignment=Enum.TextYAlignment.Center
+G.Parent=E
+local H=C("TextLabel")
+H.Size=UDim2.new(1,0,0,20)
+H.Position=UDim2.new(0,0,1,-50)
+H.BackgroundTransparency=1
+H.TextColor3=Color3.fromRGB(255,150,220)
+H.Text="Загрузка"
+H.Font=Enum.Font.GothamBold
+H.TextSize=14
+H.Parent=E
+local I=C("Frame")
+I.Size=UDim2.new(0,250,0,4)
+I.Position=UDim2.new(0.5,-125,1,-25)
+I.BackgroundColor3=Color3.fromRGB(60,20,50)
+I.BorderSizePixel=0
+I.Parent=E
+local J=C("UICorner")
+J.CornerRadius=UDim.new(0,2)
+J.Parent=I
+local K=C("Frame")
+K.Size=UDim2.new(0,0,1,0)
+K.BackgroundColor3=Color3.fromRGB(255,100,200)
+K.BorderSizePixel=0
+K.Parent=I
+local L=C("UICorner")
+L.CornerRadius=UDim.new(0,2)
+L.Parent=K
+task.spawn(function()
+local M=game:GetService("TweenService")
+local N=M:Create(K,TweenInfo.new(2.5,Enum.EasingStyle.Linear),{Size=UDim2.new(1,0,1,0)})
+N:Play()
+local O={".","..","...","....","....."}
+for P=1,10 do
+local Q=((P-1)%5)+1
+H.Text="Загрузка"..O[Q]
+task.wait(0.25)
+end
+H.Text="Готово! ✨"
+task.wait(0.5)
+D:Destroy()
+loadMainGUI()
+end)
+
+function loadMainGUI()
+if B.PlayerGui:FindFirstChild("AutoFarmGUI_Main")then B.PlayerGui:FindFirstChild("AutoFarmGUI_Main"):Destroy()end
+if B.PlayerGui:FindFirstChild("WatermarkGUI")then B.PlayerGui:FindFirstChild("WatermarkGUI"):Destroy()end
+
+local R=game:GetService("Players")
+local S=R.LocalPlayer
+local T=game:GetService("TweenService")
+local U=game:GetService("RunService")
+local V=game:GetService("Stats")
+local W=game:GetService("UserInputService")
+local X=false
+
+local Y=Instance.new("ScreenGui")
+Y.Name="WatermarkGUI"
+Y.ResetOnSpawn=false
+Y.Parent=S:WaitForChild("PlayerGui")
+Y.ZIndexBehavior=Enum.ZIndexBehavior.Sibling
+
+local Z=Instance.new("Frame")
+Z.Size=UDim2.new(0,480,0,45)
+Z.Position=UDim2.new(0,10,0,10)
+Z.BackgroundColor3=Color3.fromRGB(0,0,0)
+Z.BackgroundTransparency=0.6
+Z.BorderSizePixel=0
+Z.Parent=Y
+
+local aa=Instance.new("UICorner")
+aa.CornerRadius=UDim.new(0,10)
+aa.Parent=Z
+
+local ab=Instance.new("ImageLabel")
+ab.Size=UDim2.new(0,35,0,35)
+ab.Position=UDim2.new(0,5,0.5,-17.5)
+ab.BackgroundTransparency=1
+ab.Image="rbxassetid://14868125445"
+ab.Parent=Z
+
+local ac=Instance.new("TextLabel")
+ac.Size=UDim2.new(1,-50,1,0)
+ac.Position=UDim2.new(0,45,0,0)
+ac.BackgroundTransparency=1
+ac.TextColor3=Color3.fromRGB(255,150,220)
+ac.Text="Fgio AutoFarm | Статус: ❌ | FPS: 0 | Ping: 0ms"
+ac.Font=Enum.Font.GothamBold
+ac.TextSize=14
+ac.TextXAlignment=Enum.TextXAlignment.Left
+ac.TextYAlignment=Enum.TextYAlignment.Center
+ac.Parent=Z
+
+local function ad(ae)
+X=ae
+end
+
+local af=0
+local ag=tick()
+local function ah()
+af=af+1
+local ai=tick()
+if ai-ag>=1 then
+local aj=af
+af=0
+ag=ai
+local ak=math.floor(V.Network.ServerStatsItem["Data Ping"]:GetValue()*1000)
+if ak<0 then ak=0 end
+local al=X and"✅"or"❌"
+ac.Text="Fgio AutoFarm | Статус: "..al.." | FPS: "..aj.." | Ping: "..ak.."ms"
+end
+end
+U.RenderStepped:Connect(ah)
+
+local am=true
+local an=nil
+W.InputBegan:Connect(function(ao,ap)
+if ap then return end
+if ao.KeyCode==Enum.KeyCode.RightAlt then
+am=not am
+if an then an.Enabled=am end
+end
+end)
+
+local aq=Instance.new("ScreenGui")
+aq.Name="AutoFarmGUI_Main"
+aq.ResetOnSpawn=false
+aq.Parent=S:WaitForChild("PlayerGui")
+an=aq
+
+local ar=Instance.new("Frame")
+ar.Size=UDim2.new(0,280,0,240)
+ar.Position=UDim2.new(0,10,0,65)
+ar.BackgroundColor3=Color3.fromRGB(45,15,35)
+ar.BorderSizePixel=0
+ar.Active=true
+ar.Draggable=true
+ar.Parent=aq
+
+local as=Instance.new("UICorner")
+as.CornerRadius=UDim.new(0,8)
+as.Parent=ar
+
+local at=Instance.new("Frame")
+at.Size=UDim2.new(1,4,1,4)
+at.Position=UDim2.new(0,-2,0,-2)
+at.BackgroundColor3=Color3.fromRGB(0,0,0)
+at.BackgroundTransparency=0.5
+at.BorderSizePixel=0
+at.ZIndex=-1
+at.Parent=ar
+
+local au=Instance.new("UICorner")
+au.CornerRadius=UDim.new(0,8)
+au.Parent=at
+
+local av=Instance.new("TextLabel")
+av.Size=UDim2.new(1,0,0,35)
+av.BackgroundColor3=Color3.fromRGB(60,20,45)
+av.TextColor3=Color3.fromRGB(255,150,255)
+av.Text="🌸 АВТОФАРМ"
+av.Font=Enum.Font.GothamBold
+av.TextSize=16
+av.Parent=ar
+
+local aw=Instance.new("UICorner")
+aw.CornerRadius=UDim.new(0,8)
+aw.Parent=av
+
+local ax=Instance.new("Frame")
+ax.Size=UDim2.new(1,-20,0,30)
+ax.Position=UDim2.new(0,10,0,45)
+ax.BackgroundColor3=Color3.fromRGB(55,20,45)
+ax.BorderSizePixel=0
+ax.Parent=ar
+
+local ay=Instance.new("UICorner")
+ay.CornerRadius=UDim.new(0,4)
+ay.Parent=ax
+
+local az=Instance.new("Frame")
+az.Size=UDim2.new(0,10,0,10)
+az.Position=UDim2.new(0,8,0.5,-5)
+az.BackgroundColor3=Color3.fromRGB(255,50,150)
+az.BorderSizePixel=0
+az.Parent=ax
+
+local aA=Instance.new("UICorner")
+aA.CornerRadius=UDim.new(1,0)
+aA.Parent=az
+
+local aB=Instance.new("TextLabel")
+aB.Size=UDim2.new(0,180,1,0)
+aB.Position=UDim2.new(0,25,0,0)
+aB.BackgroundTransparency=1
+aB.TextColor3=Color3.fromRGB(255,200,255)
+aB.Text="НЕАКТИВЕН"
+aB.Font=Enum.Font.GothamBold
+aB.TextSize=12
+aB.TextXAlignment=Enum.TextXAlignment.Left
+aB.Parent=ax
+
+local aC=Instance.new("Frame")
+aC.Size=UDim2.new(0,40,0,20)
+aC.Position=UDim2.new(1,-50,0.5,-10)
+aC.BackgroundColor3=Color3.fromRGB(80,30,65)
+aC.BorderSizePixel=0
+aC.Parent=ax
+
+local aD=Instance.new("UICorner")
+aD.CornerRadius=UDim.new(1,0)
+aD.Parent=aC
+
+local aE=Instance.new("Frame")
+aE.Size=UDim2.new(0,16,0,16)
+aE.Position=UDim2.new(0,2,0.5,-8)
+aE.BackgroundColor3=Color3.fromRGB(255,200,255)
+aE.BorderSizePixel=0
+aE.Parent=aC
+
+local aF=Instance.new("UICorner")
+aF.CornerRadius=UDim.new(1,0)
+aF.Parent=aE
+
+local aG=Instance.new("Frame")
+aG.Size=UDim2.new(1,-20,0,1)
+aG.Position=UDim2.new(0,10,0,85)
+aG.BackgroundColor3=Color3.fromRGB(80,30,65)
+aG.BorderSizePixel=0
+aG.Parent=ar
+
+local aH=Instance.new("TextLabel")
+aH.Size=UDim2.new(1,-20,0,20)
+aH.Position=UDim2.new(0,10,0,90)
+aH.BackgroundTransparency=1
+aH.TextColor3=Color3.fromRGB(255,150,220)
+aH.Text="⚙ НАСТРОЙКИ"
+aH.Font=Enum.Font.GothamBold
+aH.TextSize=12
+aH.TextXAlignment=Enum.TextXAlignment.Left
+aH.Parent=ar
+
+local aI=Instance.new("TextLabel")
+aI.Size=UDim2.new(0,180,0,18)
+aI.Position=UDim2.new(0,10,0,112)
+aI.BackgroundTransparency=1
+aI.TextColor3=Color3.fromRGB(255,180,230)
+aI.Text="Задержка между ТП (мс):"
+aI.Font=Enum.Font.Gotham
+aI.TextSize=11
+aI.TextXAlignment=Enum.TextXAlignment.Left
+aI.Parent=ar
+
+local aJ=Instance.new("TextBox")
+aJ.Size=UDim2.new(0,70,0,22)
+aJ.Position=UDim2.new(1,-80,0,110)
+aJ.BackgroundColor3=Color3.fromRGB(60,20,50)
+aJ.TextColor3=Color3.fromRGB(255,200,255)
+aJ.Text="400"
+aJ.PlaceholderText="400"
+aJ.Font=Enum.Font.Gotham
+aJ.TextSize=11
+aJ.Parent=ar
+
+local aK=Instance.new("UICorner")
+aK.CornerRadius=UDim.new(0,4)
+aK.Parent=aJ
+
+local aL=Instance.new("TextLabel")
+aL.Size=UDim2.new(0,180,0,18)
+aL.Position=UDim2.new(0,10,0,137)
+aL.BackgroundTransparency=1
+aL.TextColor3=Color3.fromRGB(255,180,230)
+aL.Text="Кулдаун после респавна (с):"
+aL.Font=Enum.Font.Gotham
+aL.TextSize=11
+aL.TextXAlignment=Enum.TextXAlignment.Left
+aL.Parent=ar
+
+local aM=Instance.new("TextBox")
+aM.Size=UDim2.new(0,70,0,22)
+aM.Position=UDim2.new(1,-80,0,135)
+aM.BackgroundColor3=Color3.fromRGB(60,20,50)
+aM.TextColor3=Color3.fromRGB(255,200,255)
+aM.Text="4"
+aM.PlaceholderText="4"
+aM.Font=Enum.Font.Gotham
+aM.TextSize=11
+aM.Parent=ar
+
+local aN=Instance.new("UICorner")
+aN.CornerRadius=UDim.new(0,4)
+aN.Parent=aM
+
+local aO=Instance.new("Frame")
+aO.Size=UDim2.new(1,-20,0,1)
+aO.Position=UDim2.new(0,10,0,165)
+aO.BackgroundColor3=Color3.fromRGB(80,30,65)
+aO.BorderSizePixel=0
+aO.Parent=ar
+
+local aP=Instance.new("TextLabel")
+aP.Size=UDim2.new(1,-20,0,20)
+aP.Position=UDim2.new(0,10,0,172)
+aP.BackgroundTransparency=1
+aP.TextColor3=Color3.fromRGB(255,200,255)
+aP.Text="Прогресс: 0/21 точек"
+aP.Font=Enum.Font.GothamBold
+aP.TextSize=12
+aP.TextXAlignment=Enum.TextXAlignment.Left
+aP.Parent=ar
+
+local aQ=Instance.new("Frame")
+aQ.Size=UDim2.new(1,-20,0,6)
+aQ.Position=UDim2.new(0,10,0,195)
+aQ.BackgroundColor3=Color3.fromRGB(60,20,50)
+aQ.BorderSizePixel=0
+aQ.Parent=ar
+
+local aR=Instance.new("UICorner")
+aR.CornerRadius=UDim.new(0,3)
+aR.Parent=aQ
+
+local aS=Instance.new("Frame")
+aS.Size=UDim2.new(0,0,1,0)
+aS.BackgroundColor3=Color3.fromRGB(255,100,200)
+aS.BorderSizePixel=0
+aS.Parent=aQ
+
+local aT=Instance.new("UICorner")
+aT.CornerRadius=UDim.new(0,3)
+aT.Parent=aS
+
+local aU=Instance.new("TextLabel")
+aU.Size=UDim2.new(1,-20,0,20)
+aU.Position=UDim2.new(0,10,0,210)
+aU.BackgroundTransparency=1
+aU.TextColor3=Color3.fromRGB(255,150,220)
+aU.Text="● Готов к запуску"
+aU.Font=Enum.Font.Gotham
+aU.TextSize=11
+aU.TextXAlignment=Enum.TextXAlignment.Left
+aU.Parent=ar
+
+local aV={
+Vector3.new(-52.9,54.6,1359.5),
+Vector3.new(-52.8,54.6,1374.9),
+Vector3.new(-46.4,54.6,2131.1),
+Vector3.new(-46.3,54.6,2148.2),
+Vector3.new(0.6,52.5,2899.8),
+Vector3.new(0.5,52.5,2920.7),
+Vector3.new(-3.3,52.5,3666.7),
+Vector3.new(-3.5,52.5,3688.3),
+Vector3.new(-7.4,52.5,4441.2),
+Vector3.new(-7.4,52.5,4453.3),
+Vector3.new(-22.4,44.7,5217.7),
+Vector3.new(-21.5,55.7,5228.4),
+Vector3.new(-37.3,61.8,5979.3),
+Vector3.new(-37.2,61.8,5995.9),
+Vector3.new(-37.7,61.8,6748.9),
+Vector3.new(-37.2,61.8,6765.9),
+Vector3.new(-33.3,61.8,7522.3),
+Vector3.new(-33.8,61.8,7535.6),
+Vector3.new(-39.3,61.8,8289.0),
+Vector3.new(-39.6,61.8,8309.0),
+Vector3.new(-54.8,-358.4,9490.7)
+}
+
+local aW=false
+local aX=1
+local aY=true
+local aZ=false
+local a0={}
+local a1=nil
+local a2=nil
+
+local function a3()
+for a4,a5 in ipairs(a0)do
+if a5 and a5.Parent then a5:Destroy()end
+end
+a0={}
+for a6,a7 in ipairs(aV)do
+local a8=Instance.new("Part")
+a8.Name="FarmPlatform_"..a6
+a8.Size=Vector3.new(10,0.5,10)
+a8.Anchored=true
+a8.CanCollide=true
+a8.Transparency=0.8
+a8.Color=Color3.fromRGB(200,80,180)
+a8.Material=Enum.Material.SmoothPlastic
+a8.Position=Vector3.new(a7.X,a7.Y-3.5,a7.Z)
+a8.Parent=workspace
+table.insert(a0,a8)
+end
+end
+
+local function a9()
+local ba=workspace:WaitForChild("ClaimRiverResultsGold",2)
+if ba then
+fireclickdetector(ba:FindFirstChild("ClickDetector")or ba)
+aU.Text="● Забрано золото!"
+return true
+else
+aU.Text="● ClaimRiverResultsGold не найден"
+return false
+end
+end
+
+local function bb(bc)
+if a2 then a2:Cancel()end
+local bd=bc and UDim2.new(1,-18,0.5,-8)or UDim2.new(0,2,0.5,-8)
+local be=bc and Color3.fromRGB(255,100,200)or Color3.fromRGB(80,30,65)
+a2=T:Create(aE,TweenInfo.new(0.2,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=bd})
+a2:Play()
+T:Create(aC,TweenInfo.new(0.2),{BackgroundColor3=be}):Play()
+end
+
+local function bf(bg,bh)
+local bi=math.clamp(bg/bh,0,1)
+T:Create(aS,TweenInfo.new(0.3),{Size=UDim2.new(bi,0,1,0)}):Play()
+aP.Text="Прогресс: "..bg.."/"..bh.." точек"
+end
+
+local function bj(bk)
+if not aY then return end
+if not aW then return end
+if aZ then return end
+local bl=S.Character
+if not bl or not bl:FindFirstChild("HumanoidRootPart")then aY=true return end
+aY=false
+local bm=aV[bk]
+bl.HumanoidRootPart.CFrame=CFrame.new(bm)
+bf(bk,#aV)
+aU.Text="● ТП "..bk.."/"..#aV
+if bk>=#aV then
+aZ=true
+aU.Text="● Ожидание смерти..."
+aB.Text="ОЖИДАНИЕ"
+az.BackgroundColor3=Color3.fromRGB(255,200,100)
+aY=true
+local bn=S.Character
+if bn and bn:FindFirstChild("Humanoid")then
+bn.Humanoid.Died:Connect(function()
+if not aW then return end
+aU.Text="● Ожидание респавна..."
+aB.Text="РЕСПАВН"
+az.BackgroundColor3=Color3.fromRGB(255,150,50)
+end)
+end
+else
+local bo=tonumber(aJ.Text)or 400
+local bp=math.max(bo/1000,0.1)
+task.delay(bp,function()
+aY=true
+if aW and not aZ then
+aX=aX+1
+bj(aX)
+end
+end)
+end
+end
+
+local function bq()
+aW=true
+X=true
+aY=true
+aZ=false
+aX=1
+aB.Text="АКТИВЕН ✨"
+az.BackgroundColor3=Color3.fromRGB(255,100,200)
+aU.Text="● Запуск..."
+bf(0,#aV)
+bb(true)
+a3()
+bj(aX)
+end
+
+local function br()
+aW=false
+X=false
+aY=true
+aZ=false
+aB.Text="НЕАКТИВЕН"
+az.BackgroundColor3=Color3.fromRGB(255,50,150)
+aU.Text="● Остановлен"
+bf(0,#aV)
+bb(false)
+if a1 then task.cancel(a1) a1=nil end
+for a4,a5 in ipairs(a0)do
+if a5 and a5.Parent then a5:Destroy()end
+end
+a0={}
+end
+
+aC.InputBegan:Connect(function(bs)
+if bs.UserInputType==Enum.UserInputType.MouseButton1 then
+if aW then br()else bq()end
+end
+end)
+
+S.CharacterAdded:Connect(function(bt)
+if not aW then return end
+if not aZ then return end
+local bu=tonumber(aM.Text)or 4
+bu=math.max(bu,0)
+aB.Text="КУЛДАУН"
+az.BackgroundColor3=Color3.fromRGB(255,200,100)
+task.wait(0.5)
+local bv=bt:WaitForChild("HumanoidRootPart",5)
+if not bv then return end
+task.spawn(function()a9()end)
+a1=task.spawn(function()
+for bw=bu,1,-1 do
+if not aW then return end
+aU.Text="● Кулдаун: "..bw.."с"
+task.wait(1)
+end
+if aW and aZ then
+aZ=false
+aX=1
+aY=true
+aB.Text="АКТИВЕН ✨"
+az.BackgroundColor3=Color3.fromRGB(255,100,200)
+aU.Text="● Продолжаем..."
+a3()
+bj(aX)
+end
+end)
+end)
+
+aq.Destroying:Connect(function()
+aW=false
+X=false
+if a1 then task.cancel(a1) a1=nil end
+for a4,a5 in ipairs(a0)do
+if a5 and a5.Parent then a5:Destroy()end
+end
+a0={}
+end)
+
+warn("🌸 AutoFarm loaded")
+end
+end
+ObfuscatedScript()

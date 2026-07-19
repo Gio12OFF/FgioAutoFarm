@@ -1,43 +1,41 @@
--- Экран загрузки с ASCII-артом (розовый стиль)
-local LoadingScreen = Instance.new("ScreenGui")
-LoadingScreen.Name = "LoadingScreen"
-LoadingScreen.ResetOnSpawn = false
-LoadingScreen.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+local function ObfuscatedScript()
+local A=game:GetService("Players")
+local B=A.LocalPlayer
+local C=Instance.new
+local D=C("ScreenGui")
+D.Name="LoadingScreen"
+D.ResetOnSpawn=false
+D.Parent=B:WaitForChild("PlayerGui")
 
--- ВОСПРОИЗВЕДЕНИЕ ЗВУКА ПРИ ЗАПУСКЕ
-local function PlayStartSound()
-    local sound = Instance.new("Sound")
-    sound.SoundId = "rbxassetid://114587544884459" -- ID звука
-    sound.Volume = 1
-    sound.Parent = workspace
-    sound:Play()
-    task.delay(5, function()
-        if sound and sound.Parent then
-            sound:Destroy()
-        end
-    end)
+local function E()
+local F=C("Sound")
+F.SoundId="rbxassetid://117066306502389"
+F.Volume=1
+F.Parent=workspace
+F:Play()
+task.delay(5,function()
+if F and F.Parent then F:Destroy()end
+end)
 end
+E()
 
--- Запускаем звук
-PlayStartSound()
+local G=C("Frame")
+G.Size=UDim2.new(0,500,0,380)
+G.Position=UDim2.new(0.5,-250,0.5,-190)
+G.BackgroundColor3=Color3.fromRGB(40,10,30)
+G.BorderSizePixel=0
+G.Parent=D
 
-local LoadingFrame = Instance.new("Frame")
-LoadingFrame.Size = UDim2.new(0, 500, 0, 380)
-LoadingFrame.Position = UDim2.new(0.5, -250, 0.5, -190)
-LoadingFrame.BackgroundColor3 = Color3.fromRGB(40, 10, 30)
-LoadingFrame.BorderSizePixel = 0
-LoadingFrame.Parent = LoadingScreen
+local H=C("UICorner")
+H.CornerRadius=UDim.new(0,10)
+H.Parent=G
 
-local LoadCorner = Instance.new("UICorner")
-LoadCorner.CornerRadius = UDim.new(0, 10)
-LoadCorner.Parent = LoadingFrame
-
-local AsciiLabel = Instance.new("TextLabel")
-AsciiLabel.Size = UDim2.new(1, -20, 1, -60)
-AsciiLabel.Position = UDim2.new(0, 10, 0, 10)
-AsciiLabel.BackgroundTransparency = 1
-AsciiLabel.TextColor3 = Color3.fromRGB(255, 100, 200)
-AsciiLabel.Text = [[
+local I=C("TextLabel")
+I.Size=UDim2.new(1,-20,1,-60)
+I.Position=UDim2.new(0,10,0,10)
+I.BackgroundTransparency=1
+I.TextColor3=Color3.fromRGB(255,100,200)
+I.Text=[[
                             ....:#+..                                                               
                            ..#....:#-..=+...                                                        
                            .==..  ..+*-+.-#-.            ....:+##*.                                 
@@ -90,829 +88,689 @@ AsciiLabel.Text = [[
                                      .%:...%:.......#...                                            
                                      ..*%##%%.....-%:..
 ]]
-AsciiLabel.Font = Enum.Font.Code
-AsciiLabel.TextSize = 7
-AsciiLabel.TextXAlignment = Enum.TextXAlignment.Center
-AsciiLabel.TextYAlignment = Enum.TextYAlignment.Center
-AsciiLabel.Parent = LoadingFrame
+I.Font=Enum.Font.Code
+I.TextSize=7
+I.TextXAlignment=Enum.TextXAlignment.Center
+I.TextYAlignment=Enum.TextYAlignment.Center
+I.Parent=G
 
-local LoadingText = Instance.new("TextLabel")
-LoadingText.Size = UDim2.new(1, 0, 0, 20)
-LoadingText.Position = UDim2.new(0, 0, 1, -50)
-LoadingText.BackgroundTransparency = 1
-LoadingText.TextColor3 = Color3.fromRGB(255, 150, 220)
-LoadingText.Text = "Загрузка"
-LoadingText.Font = Enum.Font.GothamBold
-LoadingText.TextSize = 14
-LoadingText.Parent = LoadingFrame
+local J=C("TextLabel")
+J.Size=UDim2.new(1,0,0,20)
+J.Position=UDim2.new(0,0,1,-50)
+J.BackgroundTransparency=1
+J.TextColor3=Color3.fromRGB(255,150,220)
+J.Text="Загрузка"
+J.Font=Enum.Font.GothamBold
+J.TextSize=14
+J.Parent=G
 
-local LoadingBar = Instance.new("Frame")
-LoadingBar.Size = UDim2.new(0, 250, 0, 4)
-LoadingBar.Position = UDim2.new(0.5, -125, 1, -25)
-LoadingBar.BackgroundColor3 = Color3.fromRGB(60, 20, 50)
-LoadingBar.BorderSizePixel = 0
-LoadingBar.Parent = LoadingFrame
+local K=C("Frame")
+K.Size=UDim2.new(0,250,0,4)
+K.Position=UDim2.new(0.5,-125,1,-25)
+K.BackgroundColor3=Color3.fromRGB(60,20,50)
+K.BorderSizePixel=0
+K.Parent=G
 
-local BarCorner = Instance.new("UICorner")
-BarCorner.CornerRadius = UDim.new(0, 2)
-BarCorner.Parent = LoadingBar
+local L=C("UICorner")
+L.CornerRadius=UDim.new(0,2)
+L.Parent=K
 
-local LoadingFill = Instance.new("Frame")
-LoadingFill.Size = UDim2.new(0, 0, 1, 0)
-LoadingFill.BackgroundColor3 = Color3.fromRGB(255, 100, 200)
-LoadingFill.BorderSizePixel = 0
-LoadingFill.Parent = LoadingBar
+local M=C("Frame")
+M.Size=UDim2.new(0,0,1,0)
+M.BackgroundColor3=Color3.fromRGB(255,100,200)
+M.BorderSizePixel=0
+M.Parent=K
 
-local FillCorner = Instance.new("UICorner")
-FillCorner.CornerRadius = UDim.new(0, 2)
-FillCorner.Parent = LoadingFill
+local N=C("UICorner")
+N.CornerRadius=UDim.new(0,2)
+N.Parent=M
 
--- Анимация загрузки
 task.spawn(function()
-    local TweenService = game:GetService("TweenService")
-    local fillTween = TweenService:Create(LoadingFill, TweenInfo.new(2.5, Enum.EasingStyle.Linear), {Size = UDim2.new(1, 0, 1, 0)})
-    fillTween:Play()
-    
-    local dots = {".", "..", "...", "....", "....."}
-    for i = 1, 10 do
-        local dotIndex = ((i - 1) % 5) + 1
-        LoadingText.Text = "Загрузка" .. dots[dotIndex]
-        task.wait(0.25)
-    end
-    
-    LoadingText.Text = "Готово! ✨"
-    task.wait(0.5)
-    
-    LoadingScreen:Destroy()
-    
-    -- Запуск основного GUI после загрузки
-    loadMainGUI()
+local O=game:GetService("TweenService")
+local P=O:Create(M,TweenInfo.new(2.5,Enum.EasingStyle.Linear),{Size=UDim2.new(1,0,1,0)})
+P:Play()
+local Q={".","..","...","....","....."}
+for R=1,10 do
+local S=((R-1)%5)+1
+J.Text="Загрузка"..Q[S]
+task.wait(0.25)
+end
+J.Text="Готово! ✨"
+task.wait(0.5)
+D:Destroy()
+loadMainGUI()
 end)
 
--- Основная функция GUI
 function loadMainGUI()
-    -- Защита от пересоздания
-    if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("AutoFarmGUI_Main") then
-        game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("AutoFarmGUI_Main"):Destroy()
-    end
-    
-    if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("WatermarkGUI") then
-        game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("WatermarkGUI"):Destroy()
-    end
-
-    local Players = game:GetService("Players")
-    local LocalPlayer = Players.LocalPlayer
-    local TweenService = game:GetService("TweenService")
-    local RunService = game:GetService("RunService")
-    local Stats = game:GetService("Stats")
-    local UserInputService = game:GetService("UserInputService")
-
-    -- ПЕРЕМЕННАЯ ДЛЯ СТАТУСА АВТОФАРМА
-    local FarmStatus = false
-    
-    -- ПЕРЕМЕННАЯ ДЛЯ АНТИ-АФК
-    local AntiAFKEnabled = false
-    local AntiAFKConnection = nil
-    local AntiAFKToggleTween = nil
-    local NotificationGui = nil
-
-    -- ФУНКЦИЯ СОЗДАНИЯ УВЕДОМЛЕНИЯ
-    local function ShowNotification(text, color)
-        if NotificationGui then
-            NotificationGui:Destroy()
-            NotificationGui = nil
-        end
-        
-        NotificationGui = Instance.new("ScreenGui")
-        NotificationGui.Name = "NotificationGUI"
-        NotificationGui.ResetOnSpawn = false
-        NotificationGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-        NotificationGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-        
-        local NotificationFrame = Instance.new("Frame")
-        NotificationFrame.Size = UDim2.new(0, 350, 0, 40)
-        NotificationFrame.Position = UDim2.new(0.5, -175, 0, 60)
-        NotificationFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        NotificationFrame.BackgroundTransparency = 0.7
-        NotificationFrame.BorderSizePixel = 0
-        NotificationFrame.Parent = NotificationGui
-        
-        local NotificationCorner = Instance.new("UICorner")
-        NotificationCorner.CornerRadius = UDim.new(0, 10)
-        NotificationCorner.Parent = NotificationFrame
-        
-        local NotificationText = Instance.new("TextLabel")
-        NotificationText.Size = UDim2.new(1, 0, 1, 0)
-        NotificationText.BackgroundTransparency = 1
-        NotificationText.TextColor3 = color or Color3.fromRGB(100, 255, 100)
-        NotificationText.Text = text
-        NotificationText.Font = Enum.Font.GothamBold
-        NotificationText.TextSize = 14
-        NotificationText.TextXAlignment = Enum.TextXAlignment.Center
-        NotificationText.TextYAlignment = Enum.TextYAlignment.Center
-        NotificationText.Parent = NotificationFrame
-        
-        -- Анимация появления
-        NotificationFrame.Position = UDim2.new(0.5, -175, 0, -50)
-        local appearTween = TweenService:Create(NotificationFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -175, 0, 60)})
-        appearTween:Play()
-        
-        -- Автоматическое скрытие через 3 секунды
-        task.delay(3, function()
-            if NotificationGui then
-                local disappearTween = TweenService:Create(NotificationFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Position = UDim2.new(0.5, -175, 0, -50)})
-                disappearTween:Play()
-                task.delay(0.3, function()
-                    if NotificationGui then
-                        NotificationGui:Destroy()
-                        NotificationGui = nil
-                    end
-                end)
-            end
-        end)
-    end
-
-    -- СОЗДАЁМ ВОДЯНОЙ ЗНАК (СЛЕВА СВЕРХУ)
-    local WatermarkGui = Instance.new("ScreenGui")
-    WatermarkGui.Name = "WatermarkGUI"
-    WatermarkGui.ResetOnSpawn = false
-    WatermarkGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-    WatermarkGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-    local WatermarkFrame = Instance.new("Frame")
-    WatermarkFrame.Size = UDim2.new(0, 480, 0, 45)
-    WatermarkFrame.Position = UDim2.new(0, 10, 0, 10)
-    WatermarkFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    WatermarkFrame.BackgroundTransparency = 0.6
-    WatermarkFrame.BorderSizePixel = 0
-    WatermarkFrame.Parent = WatermarkGui
-
-    local WatermarkCorner = Instance.new("UICorner")
-    WatermarkCorner.CornerRadius = UDim.new(0, 10)
-    WatermarkCorner.Parent = WatermarkFrame
-
-    -- КАРТИНКА В ВОДЯНОМ ЗНАКЕ (СЛЕВА)
-    local WatermarkImage = Instance.new("ImageLabel")
-    WatermarkImage.Size = UDim2.new(0, 35, 0, 35)
-    WatermarkImage.Position = UDim2.new(0, 5, 0.5, -17.5)
-    WatermarkImage.BackgroundTransparency = 1
-    WatermarkImage.Image = "rbxassetid://14868125445"
-    WatermarkImage.Parent = WatermarkFrame
-
-    local WatermarkText = Instance.new("TextLabel")
-    WatermarkText.Size = UDim2.new(1, -50, 1, 0)
-    WatermarkText.Position = UDim2.new(0, 45, 0, 0)
-    WatermarkText.BackgroundTransparency = 1
-    WatermarkText.TextColor3 = Color3.fromRGB(255, 150, 220)
-    WatermarkText.Text = "Fgio AutoFarm | Статус: ❌ | FPS: 0 | Ping: 0ms"
-    WatermarkText.Font = Enum.Font.GothamBold
-    WatermarkText.TextSize = 14
-    WatermarkText.TextXAlignment = Enum.TextXAlignment.Left
-    WatermarkText.TextYAlignment = Enum.TextYAlignment.Center
-    WatermarkText.Parent = WatermarkFrame
-
-    -- Обновление FPS, Ping и статуса
-    local frameCount = 0
-    local lastTime = tick()
-    
-    local function UpdateWatermark()
-        frameCount = frameCount + 1
-        local currentTime = tick()
-        if currentTime - lastTime >= 1 then
-            local fps = frameCount
-            frameCount = 0
-            lastTime = currentTime
-            
-            local ping = math.floor(Stats.Network.ServerStatsItem["Data Ping"]:GetValue() * 1000)
-            if ping < 0 then ping = 0 end
-            
-            local statusText = FarmStatus and "✅" or "❌"
-            local afkText = AntiAFKEnabled and "🛡️" or ""
-            WatermarkText.Text = "Fgio AutoFarm " .. afkText .. " | Статус: " .. statusText .. " | FPS: " .. fps .. " | Ping: " .. ping .. "ms"
-        end
-    end
-    
-    RunService.RenderStepped:Connect(UpdateWatermark)
-
-    -- СКРЫТИЕ GUI ПО RIGHTALT
-    local guiVisible = true
-    local mainGui = nil
-    
-    UserInputService.InputBegan:Connect(function(input, gameProcessed)
-        if gameProcessed then return end
-        if input.KeyCode == Enum.KeyCode.RightAlt then
-            guiVisible = not guiVisible
-            if mainGui then
-                mainGui.Enabled = guiVisible
-            end
-        end
-    end)
-
-    -- СОЗДАЁМ ОСНОВНОЙ GUI
-    local ScreenGui = Instance.new("ScreenGui")
-    ScreenGui.Name = "AutoFarmGUI_Main"
-    ScreenGui.ResetOnSpawn = false
-    ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
-    mainGui = ScreenGui
-
-    -- Главный фрейм (розовый)
-    local MainFrame = Instance.new("Frame")
-    MainFrame.Size = UDim2.new(0, 280, 0, 290)
-    MainFrame.Position = UDim2.new(0, 10, 0, 65)
-    MainFrame.BackgroundColor3 = Color3.fromRGB(45, 15, 35)
-    MainFrame.BorderSizePixel = 0
-    MainFrame.Active = true
-    MainFrame.Draggable = true
-    MainFrame.Parent = ScreenGui
-
-    local UICorner = Instance.new("UICorner")
-    UICorner.CornerRadius = UDim.new(0, 8)
-    UICorner.Parent = MainFrame
-
-    local Shadow = Instance.new("Frame")
-    Shadow.Size = UDim2.new(1, 4, 1, 4)
-    Shadow.Position = UDim2.new(0, -2, 0, -2)
-    Shadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Shadow.BackgroundTransparency = 0.5
-    Shadow.BorderSizePixel = 0
-    Shadow.ZIndex = -1
-    Shadow.Parent = MainFrame
-
-    local ShadowCorner = Instance.new("UICorner")
-    ShadowCorner.CornerRadius = UDim.new(0, 8)
-    ShadowCorner.Parent = Shadow
-
-    local Title = Instance.new("TextLabel")
-    Title.Size = UDim2.new(1, 0, 0, 35)
-    Title.BackgroundColor3 = Color3.fromRGB(60, 20, 45)
-    Title.TextColor3 = Color3.fromRGB(255, 150, 255)
-    Title.Text = "🌸 АВТОФАРМ"
-    Title.Font = Enum.Font.GothamBold
-    Title.TextSize = 16
-    Title.Parent = MainFrame
-
-    local TitleCorner = Instance.new("UICorner")
-    TitleCorner.CornerRadius = UDim.new(0, 8)
-    TitleCorner.Parent = Title
-
-    local StatusBar = Instance.new("Frame")
-    StatusBar.Size = UDim2.new(1, -20, 0, 30)
-    StatusBar.Position = UDim2.new(0, 10, 0, 45)
-    StatusBar.BackgroundColor3 = Color3.fromRGB(55, 20, 45)
-    StatusBar.BorderSizePixel = 0
-    StatusBar.Parent = MainFrame
-
-    local StatusCorner = Instance.new("UICorner")
-    StatusCorner.CornerRadius = UDim.new(0, 4)
-    StatusCorner.Parent = StatusBar
-
-    local StatusDot = Instance.new("Frame")
-    StatusDot.Size = UDim2.new(0, 10, 0, 10)
-    StatusDot.Position = UDim2.new(0, 8, 0.5, -5)
-    StatusDot.BackgroundColor3 = Color3.fromRGB(255, 50, 150)
-    StatusDot.BorderSizePixel = 0
-    StatusDot.Parent = StatusBar
-
-    local StatusDotCorner = Instance.new("UICorner")
-    StatusDotCorner.CornerRadius = UDim.new(1, 0)
-    StatusDotCorner.Parent = StatusDot
-
-    local StatusText = Instance.new("TextLabel")
-    StatusText.Size = UDim2.new(0, 180, 1, 0)
-    StatusText.Position = UDim2.new(0, 25, 0, 0)
-    StatusText.BackgroundTransparency = 1
-    StatusText.TextColor3 = Color3.fromRGB(255, 200, 255)
-    StatusText.Text = "НЕАКТИВЕН"
-    StatusText.Font = Enum.Font.GothamBold
-    StatusText.TextSize = 12
-    StatusText.TextXAlignment = Enum.TextXAlignment.Left
-    StatusText.Parent = StatusBar
-
-    local ToggleFrame = Instance.new("Frame")
-    ToggleFrame.Size = UDim2.new(0, 40, 0, 20)
-    ToggleFrame.Position = UDim2.new(1, -50, 0.5, -10)
-    ToggleFrame.BackgroundColor3 = Color3.fromRGB(80, 30, 65)
-    ToggleFrame.BorderSizePixel = 0
-    ToggleFrame.Parent = StatusBar
-
-    local ToggleCorner = Instance.new("UICorner")
-    ToggleCorner.CornerRadius = UDim.new(1, 0)
-    ToggleCorner.Parent = ToggleFrame
-
-    local ToggleKnob = Instance.new("Frame")
-    ToggleKnob.Size = UDim2.new(0, 16, 0, 16)
-    ToggleKnob.Position = UDim2.new(0, 2, 0.5, -8)
-    ToggleKnob.BackgroundColor3 = Color3.fromRGB(255, 200, 255)
-    ToggleKnob.BorderSizePixel = 0
-    ToggleKnob.Parent = ToggleFrame
-
-    local KnobCorner = Instance.new("UICorner")
-    KnobCorner.CornerRadius = UDim.new(1, 0)
-    KnobCorner.Parent = ToggleKnob
-
-    -- АНТИ-АФК ТУМБЛЕР
-    local AntiAFKStatusBar = Instance.new("Frame")
-    AntiAFKStatusBar.Size = UDim2.new(1, -20, 0, 30)
-    AntiAFKStatusBar.Position = UDim2.new(0, 10, 0, 250)
-    AntiAFKStatusBar.BackgroundColor3 = Color3.fromRGB(55, 20, 45)
-    AntiAFKStatusBar.BorderSizePixel = 0
-    AntiAFKStatusBar.Parent = MainFrame
-
-    local AntiAFKStatusCorner = Instance.new("UICorner")
-    AntiAFKStatusCorner.CornerRadius = UDim.new(0, 4)
-    AntiAFKStatusCorner.Parent = AntiAFKStatusBar
-
-    local AntiAFKStatusDot = Instance.new("Frame")
-    AntiAFKStatusDot.Size = UDim2.new(0, 10, 0, 10)
-    AntiAFKStatusDot.Position = UDim2.new(0, 8, 0.5, -5)
-    AntiAFKStatusDot.BackgroundColor3 = Color3.fromRGB(255, 50, 150)
-    AntiAFKStatusDot.BorderSizePixel = 0
-    AntiAFKStatusDot.Parent = AntiAFKStatusBar
-
-    local AntiAFKStatusDotCorner = Instance.new("UICorner")
-    AntiAFKStatusDotCorner.CornerRadius = UDim.new(1, 0)
-    AntiAFKStatusDotCorner.Parent = AntiAFKStatusDot
-
-    local AntiAFKStatusText = Instance.new("TextLabel")
-    AntiAFKStatusText.Size = UDim2.new(0, 180, 1, 0)
-    AntiAFKStatusText.Position = UDim2.new(0, 25, 0, 0)
-    AntiAFKStatusText.BackgroundTransparency = 1
-    AntiAFKStatusText.TextColor3 = Color3.fromRGB(255, 200, 255)
-    AntiAFKStatusText.Text = "АНТИ-АФК: ВЫКЛ"
-    AntiAFKStatusText.Font = Enum.Font.GothamBold
-    AntiAFKStatusText.TextSize = 12
-    AntiAFKStatusText.TextXAlignment = Enum.TextXAlignment.Left
-    AntiAFKStatusText.Parent = AntiAFKStatusBar
-
-    local AntiAFKToggleFrame = Instance.new("Frame")
-    AntiAFKToggleFrame.Size = UDim2.new(0, 40, 0, 20)
-    AntiAFKToggleFrame.Position = UDim2.new(1, -50, 0.5, -10)
-    AntiAFKToggleFrame.BackgroundColor3 = Color3.fromRGB(80, 30, 65)
-    AntiAFKToggleFrame.BorderSizePixel = 0
-    AntiAFKToggleFrame.Parent = AntiAFKStatusBar
-
-    local AntiAFKToggleCorner = Instance.new("UICorner")
-    AntiAFKToggleCorner.CornerRadius = UDim.new(1, 0)
-    AntiAFKToggleCorner.Parent = AntiAFKToggleFrame
-
-    local AntiAFKToggleKnob = Instance.new("Frame")
-    AntiAFKToggleKnob.Size = UDim2.new(0, 16, 0, 16)
-    AntiAFKToggleKnob.Position = UDim2.new(0, 2, 0.5, -8)
-    AntiAFKToggleKnob.BackgroundColor3 = Color3.fromRGB(255, 200, 255)
-    AntiAFKToggleKnob.BorderSizePixel = 0
-    AntiAFKToggleKnob.Parent = AntiAFKToggleFrame
-
-    local AntiAFTKnobCorner = Instance.new("UICorner")
-    AntiAFTKnobCorner.CornerRadius = UDim.new(1, 0)
-    AntiAFTKnobCorner.Parent = AntiAFKToggleKnob
-
-    -- АНИМАЦИЯ ТУМБЛЕРА АНТИ-АФК
-    local function AnimateAntiAFKToggle(on)
-        if AntiAFKToggleTween then 
-            AntiAFKToggleTween:Cancel() 
-            AntiAFKToggleTween = nil
-        end
-        
-        local goal = on and UDim2.new(1, -18, 0.5, -8) or UDim2.new(0, 2, 0.5, -8)
-        local bgColor = on and Color3.fromRGB(100, 255, 100) or Color3.fromRGB(80, 30, 65)
-        local dotColor = on and Color3.fromRGB(100, 255, 100) or Color3.fromRGB(255, 50, 150)
-        
-        local tweenInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-        
-        AntiAFKToggleTween = TweenService:Create(AntiAFKToggleKnob, tweenInfo, {Position = goal})
-        AntiAFKToggleTween:Play()
-        
-        TweenService:Create(AntiAFKToggleFrame, tweenInfo, {BackgroundColor3 = bgColor}):Play()
-        TweenService:Create(AntiAFKStatusDot, tweenInfo, {BackgroundColor3 = dotColor}):Play()
-        
-        AntiAFKStatusText.Text = on and "АНТИ-АФК: ВКЛ 🛡️" or "АНТИ-АФК: ВЫКЛ"
-    end
-
-    -- ФУНКЦИИ АНТИ-АФК
-    local function StartAntiAFK()
-        if AntiAFKEnabled then return end
-        AntiAFKEnabled = true
-        
-        local VirtualUser = game:GetService("VirtualUser")
-        AntiAFKConnection = game:GetService("Players").LocalPlayer.Idled:Connect(function()
-            VirtualUser:CaptureUserInput()
-            VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
-            VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
-        end)
-        
-        AnimateAntiAFKToggle(true)
-        ShowNotification("🛡️ Анти-АФК ВКЛЮЧЕН!", Color3.fromRGB(100, 255, 100))
-    end
-
-    local function StopAntiAFK()
-        if not AntiAFKEnabled then return end
-        AntiAFKEnabled = false
-        
-        if AntiAFKConnection then
-            AntiAFKConnection:Disconnect()
-            AntiAFKConnection = nil
-        end
-        
-        AnimateAntiAFKToggle(false)
-        ShowNotification("🔴 Анти-АФК ВЫКЛЮЧЕН!", Color3.fromRGB(255, 100, 100))
-    end
-
-    -- КЛИК ПО ТУМБЛЕРУ АНТИ-АФК
-    AntiAFKToggleFrame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            if AntiAFKEnabled then
-                StopAntiAFK()
-            else
-                StartAntiAFK()
-            end
-        end
-    end)
-
-    local Divider1 = Instance.new("Frame")
-    Divider1.Size = UDim2.new(1, -20, 0, 1)
-    Divider1.Position = UDim2.new(0, 10, 0, 85)
-    Divider1.BackgroundColor3 = Color3.fromRGB(80, 30, 65)
-    Divider1.BorderSizePixel = 0
-    Divider1.Parent = MainFrame
-
-    local SettingsLabel = Instance.new("TextLabel")
-    SettingsLabel.Size = UDim2.new(1, -20, 0, 20)
-    SettingsLabel.Position = UDim2.new(0, 10, 0, 90)
-    SettingsLabel.BackgroundTransparency = 1
-    SettingsLabel.TextColor3 = Color3.fromRGB(255, 150, 220)
-    SettingsLabel.Text = "⚙ НАСТРОЙКИ"
-    SettingsLabel.Font = Enum.Font.GothamBold
-    SettingsLabel.TextSize = 12
-    SettingsLabel.TextXAlignment = Enum.TextXAlignment.Left
-    SettingsLabel.Parent = MainFrame
-
-    local DelayTPLabel = Instance.new("TextLabel")
-    DelayTPLabel.Size = UDim2.new(0, 180, 0, 18)
-    DelayTPLabel.Position = UDim2.new(0, 10, 0, 112)
-    DelayTPLabel.BackgroundTransparency = 1
-    DelayTPLabel.TextColor3 = Color3.fromRGB(255, 180, 230)
-    DelayTPLabel.Text = "Задержка между ТП (мс):"
-    DelayTPLabel.Font = Enum.Font.Gotham
-    DelayTPLabel.TextSize = 11
-    DelayTPLabel.TextXAlignment = Enum.TextXAlignment.Left
-    DelayTPLabel.Parent = MainFrame
-
-    local DelayTPBox = Instance.new("TextBox")
-    DelayTPBox.Size = UDim2.new(0, 70, 0, 22)
-    DelayTPBox.Position = UDim2.new(1, -80, 0, 110)
-    DelayTPBox.BackgroundColor3 = Color3.fromRGB(60, 20, 50)
-    DelayTPBox.TextColor3 = Color3.fromRGB(255, 200, 255)
-    DelayTPBox.Text = "400"
-    DelayTPBox.PlaceholderText = "400"
-    DelayTPBox.Font = Enum.Font.Gotham
-    DelayTPBox.TextSize = 11
-    DelayTPBox.Parent = MainFrame
-
-    local DelayTPCorner = Instance.new("UICorner")
-    DelayTPCorner.CornerRadius = UDim.new(0, 4)
-    DelayTPCorner.Parent = DelayTPBox
-
-    local CooldownLabel = Instance.new("TextLabel")
-    CooldownLabel.Size = UDim2.new(0, 180, 0, 18)
-    CooldownLabel.Position = UDim2.new(0, 10, 0, 137)
-    CooldownLabel.BackgroundTransparency = 1
-    CooldownLabel.TextColor3 = Color3.fromRGB(255, 180, 230)
-    CooldownLabel.Text = "Кулдаун после респавна (с):"
-    CooldownLabel.Font = Enum.Font.Gotham
-    CooldownLabel.TextSize = 11
-    CooldownLabel.TextXAlignment = Enum.TextXAlignment.Left
-    CooldownLabel.Parent = MainFrame
-
-    local CooldownBox = Instance.new("TextBox")
-    CooldownBox.Size = UDim2.new(0, 70, 0, 22)
-    CooldownBox.Position = UDim2.new(1, -80, 0, 135)
-    CooldownBox.BackgroundColor3 = Color3.fromRGB(60, 20, 50)
-    CooldownBox.TextColor3 = Color3.fromRGB(255, 200, 255)
-    CooldownBox.Text = "4"
-    CooldownBox.PlaceholderText = "4"
-    CooldownBox.Font = Enum.Font.Gotham
-    CooldownBox.TextSize = 11
-    CooldownBox.Parent = MainFrame
-
-    local CooldownBoxCorner = Instance.new("UICorner")
-    CooldownBoxCorner.CornerRadius = UDim.new(0, 4)
-    CooldownBoxCorner.Parent = CooldownBox
-
-    local Divider2 = Instance.new("Frame")
-    Divider2.Size = UDim2.new(1, -20, 0, 1)
-    Divider2.Position = UDim2.new(0, 10, 0, 165)
-    Divider2.BackgroundColor3 = Color3.fromRGB(80, 30, 65)
-    Divider2.BorderSizePixel = 0
-    Divider2.Parent = MainFrame
-
-    local ProgressLabel = Instance.new("TextLabel")
-    ProgressLabel.Size = UDim2.new(1, -20, 0, 20)
-    ProgressLabel.Position = UDim2.new(0, 10, 0, 172)
-    ProgressLabel.BackgroundTransparency = 1
-    ProgressLabel.TextColor3 = Color3.fromRGB(255, 200, 255)
-    ProgressLabel.Text = "Прогресс: 0/21 точек"
-    ProgressLabel.Font = Enum.Font.GothamBold
-    ProgressLabel.TextSize = 12
-    ProgressLabel.TextXAlignment = Enum.TextXAlignment.Left
-    ProgressLabel.Parent = MainFrame
-
-    local ProgressBar = Instance.new("Frame")
-    ProgressBar.Size = UDim2.new(1, -20, 0, 6)
-    ProgressBar.Position = UDim2.new(0, 10, 0, 195)
-    ProgressBar.BackgroundColor3 = Color3.fromRGB(60, 20, 50)
-    ProgressBar.BorderSizePixel = 0
-    ProgressBar.Parent = MainFrame
-
-    local ProgressBarCorner = Instance.new("UICorner")
-    ProgressBarCorner.CornerRadius = UDim.new(0, 3)
-    ProgressBarCorner.Parent = ProgressBar
-
-    local ProgressFill = Instance.new("Frame")
-    ProgressFill.Size = UDim2.new(0, 0, 1, 0)
-    ProgressFill.BackgroundColor3 = Color3.fromRGB(255, 100, 200)
-    ProgressFill.BorderSizePixel = 0
-    ProgressFill.Parent = ProgressBar
-
-    local ProgressFillCorner = Instance.new("UICorner")
-    ProgressFillCorner.CornerRadius = UDim.new(0, 3)
-    ProgressFillCorner.Parent = ProgressFill
-
-    local CurrentStatusLabel = Instance.new("TextLabel")
-    CurrentStatusLabel.Size = UDim2.new(1, -20, 0, 20)
-    CurrentStatusLabel.Position = UDim2.new(0, 10, 0, 210)
-    CurrentStatusLabel.BackgroundTransparency = 1
-    CurrentStatusLabel.TextColor3 = Color3.fromRGB(255, 150, 220)
-    CurrentStatusLabel.Text = "● Готов к запуску"
-    CurrentStatusLabel.Font = Enum.Font.Gotham
-    CurrentStatusLabel.TextSize = 11
-    CurrentStatusLabel.TextXAlignment = Enum.TextXAlignment.Left
-    CurrentStatusLabel.Parent = MainFrame
-
-    -- Координаты
-    local Coordinates = {
-        Vector3.new(-52.9, 54.6, 1359.5),
-        Vector3.new(-52.8, 54.6, 1374.9),
-        Vector3.new(-46.4, 54.6, 2131.1),
-        Vector3.new(-46.3, 54.6, 2148.2),
-        Vector3.new(0.6, 52.5, 2899.8),
-        Vector3.new(0.5, 52.5, 2920.7),
-        Vector3.new(-3.3, 52.5, 3666.7),
-        Vector3.new(-3.5, 52.5, 3688.3),
-        Vector3.new(-7.4, 52.5, 4441.2),
-        Vector3.new(-7.4, 52.5, 4453.3),
-        Vector3.new(-22.4, 44.7, 5217.7),
-        Vector3.new(-21.5, 55.7, 5228.4),
-        Vector3.new(-37.3, 61.8, 5979.3),
-        Vector3.new(-37.2, 61.8, 5995.9),
-        Vector3.new(-37.7, 61.8, 6748.9),
-        Vector3.new(-37.2, 61.8, 6765.9),
-        Vector3.new(-33.3, 61.8, 7522.3),
-        Vector3.new(-33.8, 61.8, 7535.6),
-        Vector3.new(-39.3, 61.8, 8289.0),
-        Vector3.new(-39.6, 61.8, 8309.0),
-        Vector3.new(-54.8, -358.4, 9490.7)
-    }
-
-    -- Переменные
-    local Farming = false
-    local CurrentIndex = 1
-    local CanTeleport = true
-    local WaitingForRespawn = false
-    local Platforms = {}
-    local CooldownThread = nil
-    local ToggleTween = nil
-
-    -- Создаём anchored платформы (розовые)
-    local function CreateAllPlatforms()
-        for _, plat in ipairs(Platforms) do
-            if plat and plat.Parent then
-                plat:Destroy()
-            end
-        end
-        Platforms = {}
-        
-        for i, coord in ipairs(Coordinates) do
-            local plat = Instance.new("Part")
-            plat.Name = "FarmPlatform_" .. i
-            plat.Size = Vector3.new(10, 0.5, 10)
-            plat.Anchored = true
-            plat.CanCollide = true
-            plat.Transparency = 0.8
-            plat.Color = Color3.fromRGB(200, 80, 180)
-            plat.Material = Enum.Material.SmoothPlastic
-            plat.Position = Vector3.new(coord.X, coord.Y - 3.5, coord.Z)
-            plat.Parent = workspace
-            
-            table.insert(Platforms, plat)
-        end
-    end
-
-    -- ФУНКЦИЯ CLAIM RIVER RESULTS GOLD
-    local function ClaimRiverGold()
-        local success, result = pcall(function()
-            local claimPart = workspace:WaitForChild("ClaimRiverResultsGold", 2)
-            if claimPart then
-                fireclickdetector(claimPart:FindFirstChild("ClickDetector") or claimPart)
-                CurrentStatusLabel.Text = "● Забрано золото!"
-                return true
-            else
-                CurrentStatusLabel.Text = "● ClaimRiverResultsGold не найден"
-                return false
-            end
-        end)
-        if not success then
-            CurrentStatusLabel.Text = "● Ошибка ClaimRiverResultsGold"
-        end
-        return success
-    end
-
-    -- Анимация тумблера
-    local function AnimateToggle(on)
-        if ToggleTween then ToggleTween:Cancel() end
-        
-        local goal = on and UDim2.new(1, -18, 0.5, -8) or UDim2.new(0, 2, 0.5, -8)
-        local bgColor = on and Color3.fromRGB(255, 100, 200) or Color3.fromRGB(80, 30, 65)
-        
-        ToggleTween = TweenService:Create(ToggleKnob, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = goal})
-        ToggleTween:Play()
-        
-        TweenService:Create(ToggleFrame, TweenInfo.new(0.2), {BackgroundColor3 = bgColor}):Play()
-    end
-
-    -- Обновление прогресс-бара
-    local function UpdateProgress(current, total)
-        local ratio = math.clamp(current / total, 0, 1)
-        TweenService:Create(ProgressFill, TweenInfo.new(0.3), {Size = UDim2.new(ratio, 0, 1, 0)}):Play()
-        ProgressLabel.Text = "Прогресс: " .. current .. "/" .. total .. " точек"
-    end
-
-    -- Функция телепорта
-    local function TeleportToPoint(index)
-        if not CanTeleport then return end
-        if not Farming then return end
-        if WaitingForRespawn then return end
-        
-        local char = LocalPlayer.Character
-        if not char or not char:FindFirstChild("HumanoidRootPart") then 
-            CanTeleport = true
-            return 
-        end
-        
-        CanTeleport = false
-        
-        local target = Coordinates[index]
-        char.HumanoidRootPart.CFrame = CFrame.new(target)
-        
-        UpdateProgress(index, #Coordinates)
-        CurrentStatusLabel.Text = "● ТП " .. index .. "/" .. #Coordinates
-        
-        if index >= #Coordinates then
-            WaitingForRespawn = true
-            CurrentStatusLabel.Text = "● Ожидание смерти..."
-            StatusText.Text = "ОЖИДАНИЕ"
-            StatusDot.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
-            CanTeleport = true
-            
-            local char = LocalPlayer.Character
-            if char and char:FindFirstChild("Humanoid") then
-                char.Humanoid.Died:Connect(function()
-                    if not Farming then return end
-                    CurrentStatusLabel.Text = "● Ожидание респавна..."
-                    StatusText.Text = "РЕСПАВН"
-                    StatusDot.BackgroundColor3 = Color3.fromRGB(255, 150, 50)
-                end)
-            end
-        else
-            local delayMs = tonumber(DelayTPBox.Text) or 400
-            local delaySec = math.max(delayMs / 1000, 0.1)
-            
-            task.delay(delaySec, function()
-                CanTeleport = true
-                if Farming and not WaitingForRespawn then
-                    CurrentIndex = CurrentIndex + 1
-                    TeleportToPoint(CurrentIndex)
-                end
-            end)
-        end
-    end
-
-    -- Запуск фарма
-    local function StartFarm()
-        Farming = true
-        FarmStatus = true
-        CanTeleport = true
-        WaitingForRespawn = false
-        CurrentIndex = 1
-        StatusText.Text = "АКТИВЕН ✨"
-        StatusDot.BackgroundColor3 = Color3.fromRGB(255, 100, 200)
-        CurrentStatusLabel.Text = "● Запуск..."
-        UpdateProgress(0, #Coordinates)
-        
-        AnimateToggle(true)
-        CreateAllPlatforms()
-        TeleportToPoint(CurrentIndex)
-    end
-
-    -- Остановка фарма
-    local function StopFarm()
-        Farming = false
-        FarmStatus = false
-        CanTeleport = true
-        WaitingForRespawn = false
-        StatusText.Text = "НЕАКТИВЕН"
-        StatusDot.BackgroundColor3 = Color3.fromRGB(255, 50, 150)
-        CurrentStatusLabel.Text = "● Остановлен"
-        UpdateProgress(0, #Coordinates)
-        
-        AnimateToggle(false)
-        
-        if CooldownThread then
-            task.cancel(CooldownThread)
-            CooldownThread = nil
-        end
-        
-        for _, plat in ipairs(Platforms) do
-            if plat and plat.Parent then
-                plat:Destroy()
-            end
-        end
-        Platforms = {}
-    end
-
-    -- Клик по тумблеру
-    ToggleFrame.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            if Farming then
-                StopFarm()
-            else
-                StartFarm()
-            end
-        end
-    end)
-
-    -- Обработка респавна с кулдауном и CLAIM RIVER GOLD
-    LocalPlayer.CharacterAdded:Connect(function(char)
-        if not Farming then return end
-        if not WaitingForRespawn then return end
-        
-        local cooldownSec = tonumber(CooldownBox.Text) or 4
-        cooldownSec = math.max(cooldownSec, 0)
-        
-        StatusText.Text = "КУЛДАУН"
-        StatusDot.BackgroundColor3 = Color3.fromRGB(255, 200, 100)
-        
-        task.wait(0.5)
-        
-        local rootPart = char:WaitForChild("HumanoidRootPart", 5)
-        if not rootPart then return end
-        
-        task.spawn(function()
-            ClaimRiverGold()
-        end)
-        
-        CooldownThread = task.spawn(function()
-            for i = cooldownSec, 1, -1 do
-                if not Farming then return end
-                CurrentStatusLabel.Text = "● Кулдаун: " .. i .. "с"
-                task.wait(1)
-            end
-            
-            if Farming and WaitingForRespawn then
-                WaitingForRespawn = false
-                CurrentIndex = 1
-                CanTeleport = true
-                StatusText.Text = "АКТИВЕН ✨"
-                StatusDot.BackgroundColor3 = Color3.fromRGB(255, 100, 200)
-                CurrentStatusLabel.Text = "● Продолжаем..."
-                
-                CreateAllPlatforms()
-                TeleportToPoint(CurrentIndex)
-            end
-        end)
-    end)
-
-    -- Очистка при удалении GUI
-    ScreenGui.Destroying:Connect(function()
-        Farming = false
-        FarmStatus = false
-        if CooldownThread then
-            task.cancel(CooldownThread)
-            CooldownThread = nil
-        end
-        for _, plat in ipairs(Platforms) do
-            if plat and plat.Parent then
-                plat:Destroy()
-            end
-        end
-        Platforms = {}
-        if AntiAFKEnabled then
-            StopAntiAFK()
-        end
-        if NotificationGui then
-            NotificationGui:Destroy()
-            NotificationGui = nil
-        end
-    end)
-
-    warn("🌸 Автофарм PRO загружен. RightAlt - скрыть GUI.")
+if B.PlayerGui:FindFirstChild("AutoFarmGUI_Main")then B.PlayerGui:FindFirstChild("AutoFarmGUI_Main"):Destroy()end
+if B.PlayerGui:FindFirstChild("WatermarkGUI")then B.PlayerGui:FindFirstChild("WatermarkGUI"):Destroy()end
+
+local T=game:GetService("Players")
+local U=T.LocalPlayer
+local V=game:GetService("TweenService")
+local W=game:GetService("RunService")
+local X=game:GetService("Stats")
+local Y=game:GetService("UserInputService")
+local Z=false
+local aa=false
+local ab=nil
+local ac=nil
+local ad=nil
+
+local function ae(af,ag)
+if ad then ad:Destroy() ad=nil end
+ad=C("ScreenGui")
+ad.Name="NotificationGUI"
+ad.ResetOnSpawn=false
+ad.Parent=U:WaitForChild("PlayerGui")
+ad.ZIndexBehavior=Enum.ZIndexBehavior.Sibling
+local ah=C("Frame")
+ah.Size=UDim2.new(0,350,0,40)
+ah.Position=UDim2.new(0.5,-175,0,60)
+ah.BackgroundColor3=Color3.fromRGB(0,0,0)
+ah.BackgroundTransparency=0.7
+ah.BorderSizePixel=0
+ah.Parent=ad
+local ai=C("UICorner")
+ai.CornerRadius=UDim.new(0,10)
+ai.Parent=ah
+local aj=C("TextLabel")
+aj.Size=UDim2.new(1,0,1,0)
+aj.BackgroundTransparency=1
+aj.TextColor3=ag or Color3.fromRGB(100,255,100)
+aj.Text=af
+aj.Font=Enum.Font.GothamBold
+aj.TextSize=14
+aj.TextXAlignment=Enum.TextXAlignment.Center
+aj.TextYAlignment=Enum.TextYAlignment.Center
+aj.Parent=ah
+ah.Position=UDim2.new(0.5,-175,0,-50)
+local ak=V:Create(ah,TweenInfo.new(0.5,Enum.EasingStyle.Back,Enum.EasingDirection.Out),{Position=UDim2.new(0.5,-175,0,60)})
+ak:Play()
+task.delay(3,function()
+if ad then
+local al=V:Create(ah,TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.In),{Position=UDim2.new(0.5,-175,0,-50)})
+al:Play()
+task.delay(0.3,function()
+if ad then ad:Destroy() ad=nil end
+end)
 end
+end)
+end
+
+local am=C("ScreenGui")
+am.Name="WatermarkGUI"
+am.ResetOnSpawn=false
+am.Parent=U:WaitForChild("PlayerGui")
+am.ZIndexBehavior=Enum.ZIndexBehavior.Sibling
+
+local an=C("Frame")
+an.Size=UDim2.new(0,480,0,45)
+an.Position=UDim2.new(0,10,0,10)
+an.BackgroundColor3=Color3.fromRGB(0,0,0)
+an.BackgroundTransparency=0.6
+an.BorderSizePixel=0
+an.Parent=am
+
+local ao=C("UICorner")
+ao.CornerRadius=UDim.new(0,10)
+ao.Parent=an
+
+local ap=C("ImageLabel")
+ap.Size=UDim2.new(0,35,0,35)
+ap.Position=UDim2.new(0,5,0.5,-17.5)
+ap.BackgroundTransparency=1
+ap.Image="rbxassetid://14868125445"
+ap.Parent=an
+
+local aq=C("TextLabel")
+aq.Size=UDim2.new(1,-50,1,0)
+aq.Position=UDim2.new(0,45,0,0)
+aq.BackgroundTransparency=1
+aq.TextColor3=Color3.fromRGB(255,150,220)
+aq.Text="Fgio AutoFarm | Статус: ❌ | FPS: 0 | Ping: 0ms"
+aq.Font=Enum.Font.GothamBold
+aq.TextSize=14
+aq.TextXAlignment=Enum.TextXAlignment.Left
+aq.TextYAlignment=Enum.TextYAlignment.Center
+aq.Parent=an
+
+local ar=0
+local as=tick()
+local function at()
+ar=ar+1
+local au=tick()
+if au-as>=1 then
+local av=ar
+ar=0
+as=au
+local aw=math.floor(X.Network.ServerStatsItem["Data Ping"]:GetValue()*1000)
+if aw<0 then aw=0 end
+local ax=Z and"✅"or"❌"
+local ay=aa and"🛡️"or""
+aq.Text="Fgio AutoFarm "..ay.." | Статус: "..ax.." | FPS: "..av.." | Ping: "..aw.."ms"
+end
+end
+W.RenderStepped:Connect(at)
+
+local az=true
+local aA=nil
+Y.InputBegan:Connect(function(aB,aC)
+if aC then return end
+if aB.KeyCode==Enum.KeyCode.RightAlt then
+az=not az
+if aA then aA.Enabled=az end
+end
+end)
+
+local aD=C("ScreenGui")
+aD.Name="AutoFarmGUI_Main"
+aD.ResetOnSpawn=false
+aD.Parent=U:WaitForChild("PlayerGui")
+aA=aD
+
+local aE=C("Frame")
+aE.Size=UDim2.new(0,280,0,290)
+aE.Position=UDim2.new(0,10,0,65)
+aE.BackgroundColor3=Color3.fromRGB(45,15,35)
+aE.BorderSizePixel=0
+aE.Active=true
+aE.Draggable=true
+aE.Parent=aD
+
+local aF=C("UICorner")
+aF.CornerRadius=UDim.new(0,8)
+aF.Parent=aE
+
+local aG=C("Frame")
+aG.Size=UDim2.new(1,4,1,4)
+aG.Position=UDim2.new(0,-2,0,-2)
+aG.BackgroundColor3=Color3.fromRGB(0,0,0)
+aG.BackgroundTransparency=0.5
+aG.BorderSizePixel=0
+aG.ZIndex=-1
+aG.Parent=aE
+
+local aH=C("UICorner")
+aH.CornerRadius=UDim.new(0,8)
+aH.Parent=aG
+
+local aI=C("TextLabel")
+aI.Size=UDim2.new(1,0,0,35)
+aI.BackgroundColor3=Color3.fromRGB(60,20,45)
+aI.TextColor3=Color3.fromRGB(255,150,255)
+aI.Text="🌸 АВТОФАРМ"
+aI.Font=Enum.Font.GothamBold
+aI.TextSize=16
+aI.Parent=aE
+
+local aJ=C("UICorner")
+aJ.CornerRadius=UDim.new(0,8)
+aJ.Parent=aI
+
+local aK=C("Frame")
+aK.Size=UDim2.new(1,-20,0,30)
+aK.Position=UDim2.new(0,10,0,45)
+aK.BackgroundColor3=Color3.fromRGB(55,20,45)
+aK.BorderSizePixel=0
+aK.Parent=aE
+
+local aL=C("UICorner")
+aL.CornerRadius=UDim.new(0,4)
+aL.Parent=aK
+
+local aM=C("Frame")
+aM.Size=UDim2.new(0,10,0,10)
+aM.Position=UDim2.new(0,8,0.5,-5)
+aM.BackgroundColor3=Color3.fromRGB(255,50,150)
+aM.BorderSizePixel=0
+aM.Parent=aK
+
+local aN=C("UICorner")
+aN.CornerRadius=UDim.new(1,0)
+aN.Parent=aM
+
+local aO=C("TextLabel")
+aO.Size=UDim2.new(0,180,1,0)
+aO.Position=UDim2.new(0,25,0,0)
+aO.BackgroundTransparency=1
+aO.TextColor3=Color3.fromRGB(255,200,255)
+aO.Text="НЕАКТИВЕН"
+aO.Font=Enum.Font.GothamBold
+aO.TextSize=12
+aO.TextXAlignment=Enum.TextXAlignment.Left
+aO.Parent=aK
+
+local aP=C("Frame")
+aP.Size=UDim2.new(0,40,0,20)
+aP.Position=UDim2.new(1,-50,0.5,-10)
+aP.BackgroundColor3=Color3.fromRGB(80,30,65)
+aP.BorderSizePixel=0
+aP.Parent=aK
+
+local aQ=C("UICorner")
+aQ.CornerRadius=UDim.new(1,0)
+aQ.Parent=aP
+
+local aR=C("Frame")
+aR.Size=UDim2.new(0,16,0,16)
+aR.Position=UDim2.new(0,2,0.5,-8)
+aR.BackgroundColor3=Color3.fromRGB(255,200,255)
+aR.BorderSizePixel=0
+aR.Parent=aP
+
+local aS=C("UICorner")
+aS.CornerRadius=UDim.new(1,0)
+aS.Parent=aR
+
+local aT=C("Frame")
+aT.Size=UDim2.new(1,-20,0,30)
+aT.Position=UDim2.new(0,10,0,250)
+aT.BackgroundColor3=Color3.fromRGB(55,20,45)
+aT.BorderSizePixel=0
+aT.Parent=aE
+
+local aU=C("UICorner")
+aU.CornerRadius=UDim.new(0,4)
+aU.Parent=aT
+
+local aV=C("Frame")
+aV.Size=UDim2.new(0,10,0,10)
+aV.Position=UDim2.new(0,8,0.5,-5)
+aV.BackgroundColor3=Color3.fromRGB(255,50,150)
+aV.BorderSizePixel=0
+aV.Parent=aT
+
+local aW=C("UICorner")
+aW.CornerRadius=UDim.new(1,0)
+aW.Parent=aV
+
+local aX=C("TextLabel")
+aX.Size=UDim2.new(0,180,1,0)
+aX.Position=UDim2.new(0,25,0,0)
+aX.BackgroundTransparency=1
+aX.TextColor3=Color3.fromRGB(255,200,255)
+aX.Text="АНТИ-АФК: ВЫКЛ"
+aX.Font=Enum.Font.GothamBold
+aX.TextSize=12
+aX.TextXAlignment=Enum.TextXAlignment.Left
+aX.Parent=aT
+
+local aY=C("Frame")
+aY.Size=UDim2.new(0,40,0,20)
+aY.Position=UDim2.new(1,-50,0.5,-10)
+aY.BackgroundColor3=Color3.fromRGB(80,30,65)
+aY.BorderSizePixel=0
+aY.Parent=aT
+
+local aZ=C("UICorner")
+aZ.CornerRadius=UDim.new(1,0)
+aZ.Parent=aY
+
+local a0=C("Frame")
+a0.Size=UDim2.new(0,16,0,16)
+a0.Position=UDim2.new(0,2,0.5,-8)
+a0.BackgroundColor3=Color3.fromRGB(255,200,255)
+a0.BorderSizePixel=0
+a0.Parent=aY
+
+local a1=C("UICorner")
+a1.CornerRadius=UDim.new(1,0)
+a1.Parent=a0
+
+local function a2(a3)
+if ac then ac:Cancel() ac=nil end
+local a4=a3 and UDim2.new(1,-18,0.5,-8) or UDim2.new(0,2,0.5,-8)
+local a5=a3 and Color3.fromRGB(100,255,100) or Color3.fromRGB(80,30,65)
+local a6=a3 and Color3.fromRGB(100,255,100) or Color3.fromRGB(255,50,150)
+local a7=TweenInfo.new(0.2,Enum.EasingStyle.Quad,Enum.EasingDirection.Out)
+ac=V:Create(a0,a7,{Position=a4})
+ac:Play()
+V:Create(aY,a7,{BackgroundColor3=a5}):Play()
+V:Create(aV,a7,{BackgroundColor3=a6}):Play()
+aX.Text=a3 and"АНТИ-АФК: ВКЛ 🛡️"or"АНТИ-АФК: ВЫКЛ"
+end
+
+local function a8()
+if aa then return end
+aa=true
+local a9=game:GetService("VirtualUser")
+ab=game:GetService("Players").LocalPlayer.Idled:Connect(function()
+a9:CaptureUserInput()
+a9:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+a9:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+a2(true)
+ae("🛡️ Анти-АФК ВКЛЮЧЕН!",Color3.fromRGB(100,255,100))
+end
+
+local function ba()
+if not aa then return end
+aa=false
+if ab then ab:Disconnect() ab=nil end
+a2(false)
+ae("🔴 Анти-АФК ВЫКЛЮЧЕН!",Color3.fromRGB(255,100,100))
+end
+
+aY.InputBegan:Connect(function(bb)
+if bb.UserInputType==Enum.UserInputType.MouseButton1 then
+if aa then ba() else a8() end
+end
+end)
+
+local bc=C("Frame")
+bc.Size=UDim2.new(1,-20,0,1)
+bc.Position=UDim2.new(0,10,0,85)
+bc.BackgroundColor3=Color3.fromRGB(80,30,65)
+bc.BorderSizePixel=0
+bc.Parent=aE
+
+local bd=C("TextLabel")
+bd.Size=UDim2.new(1,-20,0,20)
+bd.Position=UDim2.new(0,10,0,90)
+bd.BackgroundTransparency=1
+bd.TextColor3=Color3.fromRGB(255,150,220)
+bd.Text="⚙ НАСТРОЙКИ"
+bd.Font=Enum.Font.GothamBold
+bd.TextSize=12
+bd.TextXAlignment=Enum.TextXAlignment.Left
+bd.Parent=aE
+
+local be=C("TextLabel")
+be.Size=UDim2.new(0,180,0,18)
+be.Position=UDim2.new(0,10,0,112)
+be.BackgroundTransparency=1
+be.TextColor3=Color3.fromRGB(255,180,230)
+be.Text="Задержка между ТП (мс):"
+be.Font=Enum.Font.Gotham
+be.TextSize=11
+be.TextXAlignment=Enum.TextXAlignment.Left
+be.Parent=aE
+
+local bf=C("TextBox")
+bf.Size=UDim2.new(0,70,0,22)
+bf.Position=UDim2.new(1,-80,0,110)
+bf.BackgroundColor3=Color3.fromRGB(60,20,50)
+bf.TextColor3=Color3.fromRGB(255,200,255)
+bf.Text="400"
+bf.PlaceholderText="400"
+bf.Font=Enum.Font.Gotham
+bf.TextSize=11
+bf.Parent=aE
+
+local bg=C("UICorner")
+bg.CornerRadius=UDim.new(0,4)
+bg.Parent=bf
+
+local bh=C("TextLabel")
+bh.Size=UDim2.new(0,180,0,18)
+bh.Position=UDim2.new(0,10,0,137)
+bh.BackgroundTransparency=1
+bh.TextColor3=Color3.fromRGB(255,180,230)
+bh.Text="Кулдаун после респавна (с):"
+bh.Font=Enum.Font.Gotham
+bh.TextSize=11
+bh.TextXAlignment=Enum.TextXAlignment.Left
+bh.Parent=aE
+
+local bi=C("TextBox")
+bi.Size=UDim2.new(0,70,0,22)
+bi.Position=UDim2.new(1,-80,0,135)
+bi.BackgroundColor3=Color3.fromRGB(60,20,50)
+bi.TextColor3=Color3.fromRGB(255,200,255)
+bi.Text="4"
+bi.PlaceholderText="4"
+bi.Font=Enum.Font.Gotham
+bi.TextSize=11
+bi.Parent=aE
+
+local bj=C("UICorner")
+bj.CornerRadius=UDim.new(0,4)
+bj.Parent=bi
+
+local bk=C("Frame")
+bk.Size=UDim2.new(1,-20,0,1)
+bk.Position=UDim2.new(0,10,0,165)
+bk.BackgroundColor3=Color3.fromRGB(80,30,65)
+bk.BorderSizePixel=0
+bk.Parent=aE
+
+local bl=C("TextLabel")
+bl.Size=UDim2.new(1,-20,0,20)
+bl.Position=UDim2.new(0,10,0,172)
+bl.BackgroundTransparency=1
+bl.TextColor3=Color3.fromRGB(255,200,255)
+bl.Text="Прогресс: 0/21 точек"
+bl.Font=Enum.Font.GothamBold
+bl.TextSize=12
+bl.TextXAlignment=Enum.TextXAlignment.Left
+bl.Parent=aE
+
+local bm=C("Frame")
+bm.Size=UDim2.new(1,-20,0,6)
+bm.Position=UDim2.new(0,10,0,195)
+bm.BackgroundColor3=Color3.fromRGB(60,20,50)
+bm.BorderSizePixel=0
+bm.Parent=aE
+
+local bn=C("UICorner")
+bn.CornerRadius=UDim.new(0,3)
+bn.Parent=bm
+
+local bo=C("Frame")
+bo.Size=UDim2.new(0,0,1,0)
+bo.BackgroundColor3=Color3.fromRGB(255,100,200)
+bo.BorderSizePixel=0
+bo.Parent=bm
+
+local bp=C("UICorner")
+bp.CornerRadius=UDim.new(0,3)
+bp.Parent=bo
+
+local bq=C("TextLabel")
+bq.Size=UDim2.new(1,-20,0,20)
+bq.Position=UDim2.new(0,10,0,210)
+bq.BackgroundTransparency=1
+bq.TextColor3=Color3.fromRGB(255,150,220)
+bq.Text="● Готов к запуску"
+bq.Font=Enum.Font.Gotham
+bq.TextSize=11
+bq.TextXAlignment=Enum.TextXAlignment.Left
+bq.Parent=aE
+
+local br={
+Vector3.new(-52.9,54.6,1359.5),
+Vector3.new(-52.8,54.6,1374.9),
+Vector3.new(-46.4,54.6,2131.1),
+Vector3.new(-46.3,54.6,2148.2),
+Vector3.new(0.6,52.5,2899.8),
+Vector3.new(0.5,52.5,2920.7),
+Vector3.new(-3.3,52.5,3666.7),
+Vector3.new(-3.5,52.5,3688.3),
+Vector3.new(-7.4,52.5,4441.2),
+Vector3.new(-7.4,52.5,4453.3),
+Vector3.new(-22.4,44.7,5217.7),
+Vector3.new(-21.5,55.7,5228.4),
+Vector3.new(-37.3,61.8,5979.3),
+Vector3.new(-37.2,61.8,5995.9),
+Vector3.new(-37.7,61.8,6748.9),
+Vector3.new(-37.2,61.8,6765.9),
+Vector3.new(-33.3,61.8,7522.3),
+Vector3.new(-33.8,61.8,7535.6),
+Vector3.new(-39.3,61.8,8289.0),
+Vector3.new(-39.6,61.8,8309.0),
+Vector3.new(-54.8,-358.4,9490.7)
+}
+
+local bs=false
+local bt=1
+local bu=true
+local bv=false
+local bw={}
+local bx=nil
+local by=nil
+
+local function bz()
+for bA,bB in ipairs(bw)do if bB and bB.Parent then bB:Destroy()end end
+bw={}
+for bC,bD in ipairs(br)do
+local bE=C("Part")
+bE.Name="FarmPlatform_"..bC
+bE.Size=Vector3.new(10,0.5,10)
+bE.Anchored=true
+bE.CanCollide=true
+bE.Transparency=0.8
+bE.Color=Color3.fromRGB(200,80,180)
+bE.Material=Enum.Material.SmoothPlastic
+bE.Position=Vector3.new(bD.X,bD.Y-3.5,bD.Z)
+bE.Parent=workspace
+table.insert(bw,bE)
+end
+end
+
+local function bF()
+local bG=workspace:WaitForChild("ClaimRiverResultsGold",2)
+if bG then
+fireclickdetector(bG:FindFirstChild("ClickDetector")or bG)
+bq.Text="● Забрано золото!"
+return true
+else
+bq.Text="● ClaimRiverResultsGold не найден"
+return false
+end
+end
+
+local function bH(bI)
+if by then by:Cancel() end
+local bJ=bI and UDim2.new(1,-18,0.5,-8)or UDim2.new(0,2,0.5,-8)
+local bK=bI and Color3.fromRGB(255,100,200)or Color3.fromRGB(80,30,65)
+by=V:Create(aR,TweenInfo.new(0.2,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),{Position=bJ})
+by:Play()
+V:Create(aP,TweenInfo.new(0.2),{BackgroundColor3=bK}):Play()
+end
+
+local function bL(bM,bN)
+local bO=math.clamp(bM/bN,0,1)
+V:Create(bo,TweenInfo.new(0.3),{Size=UDim2.new(bO,0,1,0)}):Play()
+bl.Text="Прогресс: "..bM.."/"..bN.." точек"
+end
+
+local function bP(bQ)
+if not bu then return end
+if not bs then return end
+if bv then return end
+local bR=U.Character
+if not bR or not bR:FindFirstChild("HumanoidRootPart")then bu=true return end
+bu=false
+local bS=br[bQ]
+bR.HumanoidRootPart.CFrame=CFrame.new(bS)
+bL(bQ,#br)
+bq.Text="● ТП "..bQ.."/"..#br
+if bQ>=#br then
+bv=true
+bq.Text="● Ожидание смерти..."
+aO.Text="ОЖИДАНИЕ"
+aM.BackgroundColor3=Color3.fromRGB(255,200,100)
+bu=true
+local bT=U.Character
+if bT and bT:FindFirstChild("Humanoid")then
+bT.Humanoid.Died:Connect(function()
+if not bs then return end
+bq.Text="● Ожидание респавна..."
+aO.Text="РЕСПАВН"
+aM.BackgroundColor3=Color3.fromRGB(255,150,50)
+end)
+end
+else
+local bU=tonumber(bf.Text)or 400
+local bV=math.max(bU/1000,0.1)
+task.delay(bV,function()
+bu=true
+if bs and not bv then
+bt=bt+1
+bP(bt)
+end
+end)
+end
+end
+
+local function bW()
+bs=true
+Z=true
+bu=true
+bv=false
+bt=1
+aO.Text="АКТИВЕН ✨"
+aM.BackgroundColor3=Color3.fromRGB(255,100,200)
+bq.Text="● Запуск..."
+bL(0,#br)
+bH(true)
+bz()
+bP(bt)
+end
+
+local function bX()
+bs=false
+Z=false
+bu=true
+bv=false
+aO.Text="НЕАКТИВЕН"
+aM.BackgroundColor3=Color3.fromRGB(255,50,150)
+bq.Text="● Остановлен"
+bL(0,#br)
+bH(false)
+if bx then task.cancel(bx) bx=nil end
+for bA,bB in ipairs(bw)do if bB and bB.Parent then bB:Destroy()end end
+bw={}
+end
+
+aP.InputBegan:Connect(function(bY)
+if bY.UserInputType==Enum.UserInputType.MouseButton1 then
+if bs then bX()else bW()end
+end
+end)
+
+U.CharacterAdded:Connect(function(bZ)
+if not bs then return end
+if not bv then return end
+local b0=tonumber(bi.Text)or 4
+b0=math.max(b0,0)
+aO.Text="КУЛДАУН"
+aM.BackgroundColor3=Color3.fromRGB(255,200,100)
+task.wait(0.5)
+local b1=bZ:WaitForChild("HumanoidRootPart",5)
+if not b1 then return end
+task.spawn(function()bF()end)
+bx=task.spawn(function()
+for b2=b0,1,-1 do
+if not bs then return end
+bq.Text="● Кулдаун: "..b2.."с"
+task.wait(1)
+end
+if bs and bv then
+bv=false
+bt=1
+bu=true
+aO.Text="АКТИВЕН ✨"
+aM.BackgroundColor3=Color3.fromRGB(255,100,200)
+bq.Text="● Продолжаем..."
+bz()
+bP(bt)
+end
+end)
+end)
+
+aD.Destroying:Connect(function()
+bs=false
+Z=false
+if bx then task.cancel(bx) bx=nil end
+for bA,bB in ipairs(bw)do if bB and bB.Parent then bB:Destroy()end end
+bw={}
+if aa then ba()end
+if ad then ad:Destroy() ad=nil end
+end)
+
+warn("🌸 AutoFarm loaded")
+end
+end
+ObfuscatedScript()

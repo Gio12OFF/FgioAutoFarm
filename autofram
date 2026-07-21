@@ -99,7 +99,7 @@ J.Size=UDim2.new(1,0,0,20)
 J.Position=UDim2.new(0,0,1,-50)
 J.BackgroundTransparency=1
 J.TextColor3=Color3.fromRGB(255,150,220)
-J.Text="Загрузка"
+J.Text="Loading"
 J.Font=Enum.Font.GothamBold
 J.TextSize=14
 J.Parent=G
@@ -132,10 +132,10 @@ P:Play()
 local Q={".","..","...","....","....."}
 for R=1,10 do
 local S=((R-1)%5)+1
-J.Text="Загрузка"..Q[S]
+J.Text="Loading"..Q[S]
 task.wait(0.25)
 end
-J.Text="Готово! ✨"
+J.Text="Ready! ✨"
 task.wait(0.5)
 D:Destroy()
 loadMainGUI()
@@ -228,7 +228,7 @@ aq.Size=UDim2.new(1,-50,1,0)
 aq.Position=UDim2.new(0,45,0,0)
 aq.BackgroundTransparency=1
 aq.TextColor3=Color3.fromRGB(255,150,220)
-aq.Text="Fgio AutoFarm | Статус: ❌ | FPS: 0 | Ping: 0ms"
+aq.Text="Fgio AutoFarm | Status: ❌ | FPS: 0 | Ping: 0ms"
 aq.Font=Enum.Font.GothamBold
 aq.TextSize=14
 aq.TextXAlignment=Enum.TextXAlignment.Left
@@ -248,7 +248,7 @@ local aw=math.floor(X.Network.ServerStatsItem["Data Ping"]:GetValue()*1000)
 if aw<0 then aw=0 end
 local ax=Z and"✅"or"❌"
 local ay=aa and"🛡️"or""
-aq.Text="Fgio AutoFarm "..ay.." | Статус: "..ax.." | FPS: "..av.." | Ping: "..aw.."ms"
+aq.Text="Fgio AutoFarm "..ay.." | Status: "..ax.." | FPS: "..av.." | Ping: "..aw.."ms"
 end
 end
 W.RenderStepped:Connect(at)
@@ -299,7 +299,7 @@ local aI=C("TextLabel")
 aI.Size=UDim2.new(1,0,0,35)
 aI.BackgroundColor3=Color3.fromRGB(60,20,45)
 aI.TextColor3=Color3.fromRGB(255,150,255)
-aI.Text="🌸 АВТОФАРМ"
+aI.Text="🌸 AUTOFARM"
 aI.Font=Enum.Font.GothamBold
 aI.TextSize=16
 aI.Parent=aE
@@ -335,7 +335,7 @@ aO.Size=UDim2.new(0,180,1,0)
 aO.Position=UDim2.new(0,25,0,0)
 aO.BackgroundTransparency=1
 aO.TextColor3=Color3.fromRGB(255,200,255)
-aO.Text="НЕАКТИВЕН"
+aO.Text="INACTIVE"
 aO.Font=Enum.Font.GothamBold
 aO.TextSize=12
 aO.TextXAlignment=Enum.TextXAlignment.Left
@@ -390,7 +390,7 @@ aX.Size=UDim2.new(0,180,1,0)
 aX.Position=UDim2.new(0,25,0,0)
 aX.BackgroundTransparency=1
 aX.TextColor3=Color3.fromRGB(255,200,255)
-aX.Text="АНТИ-АФК: ВЫКЛ"
+aX.Text="ANTI-AFK: OFF"
 aX.Font=Enum.Font.GothamBold
 aX.TextSize=12
 aX.TextXAlignment=Enum.TextXAlignment.Left
@@ -428,7 +428,7 @@ ac=V:Create(a0,a7,{Position=a4})
 ac:Play()
 V:Create(aY,a7,{BackgroundColor3=a5}):Play()
 V:Create(aV,a7,{BackgroundColor3=a6}):Play()
-aX.Text=a3 and"АНТИ-АФК: ВКЛ 🛡️"or"АНТИ-АФК: ВЫКЛ"
+aX.Text=a3 and"ANTI-AFK: ON 🛡️"or"ANTI-AFK: OFF"
 end
 
 local function a8()
@@ -441,7 +441,7 @@ a9:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 a9:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 a2(true)
-ae("🛡️ Анти-АФК ВКЛЮЧЕН!",Color3.fromRGB(100,255,100))
+ae("🛡️ ANTI-AFK ENABLED!",Color3.fromRGB(100,255,100))
 end
 
 local function ba()
@@ -449,7 +449,7 @@ if not aa then return end
 aa=false
 if ab then ab:Disconnect() ab=nil end
 a2(false)
-ae("🔴 Анти-АФК ВЫКЛЮЧЕН!",Color3.fromRGB(255,100,100))
+ae("🔴 ANTI-AFK DISABLED!",Color3.fromRGB(255,100,100))
 end
 
 aY.InputBegan:Connect(function(bb)
@@ -470,7 +470,7 @@ bd.Size=UDim2.new(1,-20,0,20)
 bd.Position=UDim2.new(0,10,0,90)
 bd.BackgroundTransparency=1
 bd.TextColor3=Color3.fromRGB(255,150,220)
-bd.Text="⚙ НАСТРОЙКИ"
+bd.Text="⚙ SETTINGS"
 bd.Font=Enum.Font.GothamBold
 bd.TextSize=12
 bd.TextXAlignment=Enum.TextXAlignment.Left
@@ -481,7 +481,7 @@ be.Size=UDim2.new(0,180,0,18)
 be.Position=UDim2.new(0,10,0,112)
 be.BackgroundTransparency=1
 be.TextColor3=Color3.fromRGB(255,180,230)
-be.Text="Задержка между ТП (мс):"
+be.Text="TP Delay (ms):"
 be.Font=Enum.Font.Gotham
 be.TextSize=11
 be.TextXAlignment=Enum.TextXAlignment.Left
@@ -507,7 +507,7 @@ bh.Size=UDim2.new(0,180,0,18)
 bh.Position=UDim2.new(0,10,0,137)
 bh.BackgroundTransparency=1
 bh.TextColor3=Color3.fromRGB(255,180,230)
-bh.Text="Кулдаун после респавна (с):"
+bh.Text="Respawn Cooldown (s):"
 bh.Font=Enum.Font.Gotham
 bh.TextSize=11
 bh.TextXAlignment=Enum.TextXAlignment.Left
@@ -540,7 +540,7 @@ bl.Size=UDim2.new(1,-20,0,20)
 bl.Position=UDim2.new(0,10,0,172)
 bl.BackgroundTransparency=1
 bl.TextColor3=Color3.fromRGB(255,200,255)
-bl.Text="Прогресс: 0/21 точек"
+bl.Text="Progress: 0/21 points"
 bl.Font=Enum.Font.GothamBold
 bl.TextSize=12
 bl.TextXAlignment=Enum.TextXAlignment.Left
@@ -572,7 +572,7 @@ bq.Size=UDim2.new(1,-20,0,20)
 bq.Position=UDim2.new(0,10,0,210)
 bq.BackgroundTransparency=1
 bq.TextColor3=Color3.fromRGB(255,150,220)
-bq.Text="● Готов к запуску"
+bq.Text="● Ready to start"
 bq.Font=Enum.Font.Gotham
 bq.TextSize=11
 bq.TextXAlignment=Enum.TextXAlignment.Left
@@ -632,10 +632,10 @@ local function bF()
 local bG=workspace:WaitForChild("ClaimRiverResultsGold",2)
 if bG then
 fireclickdetector(bG:FindFirstChild("ClickDetector")or bG)
-bq.Text="● Забрано золото!"
+bq.Text="● Gold claimed!"
 return true
 else
-bq.Text="● ClaimRiverResultsGold не найден"
+bq.Text="● ClaimRiverResultsGold not found"
 return false
 end
 end
@@ -652,7 +652,7 @@ end
 local function bL(bM,bN)
 local bO=math.clamp(bM/bN,0,1)
 V:Create(bo,TweenInfo.new(0.3),{Size=UDim2.new(bO,0,1,0)}):Play()
-bl.Text="Прогресс: "..bM.."/"..bN.." точек"
+bl.Text="Progress: "..bM.."/"..bN.." points"
 end
 
 local function bP(bQ)
@@ -665,19 +665,19 @@ bu=false
 local bS=br[bQ]
 bR.HumanoidRootPart.CFrame=CFrame.new(bS)
 bL(bQ,#br)
-bq.Text="● ТП "..bQ.."/"..#br
+bq.Text="● TP "..bQ.."/"..#br
 if bQ>=#br then
 bv=true
-bq.Text="● Ожидание смерти..."
-aO.Text="ОЖИДАНИЕ"
+bq.Text="● Waiting for death..."
+aO.Text="WAITING"
 aM.BackgroundColor3=Color3.fromRGB(255,200,100)
 bu=true
 local bT=U.Character
 if bT and bT:FindFirstChild("Humanoid")then
 bT.Humanoid.Died:Connect(function()
 if not bs then return end
-bq.Text="● Ожидание респавна..."
-aO.Text="РЕСПАВН"
+bq.Text="● Waiting for respawn..."
+aO.Text="RESPAWN"
 aM.BackgroundColor3=Color3.fromRGB(255,150,50)
 end)
 end
@@ -700,9 +700,9 @@ Z=true
 bu=true
 bv=false
 bt=1
-aO.Text="АКТИВЕН ✨"
+aO.Text="ACTIVE ✨"
 aM.BackgroundColor3=Color3.fromRGB(255,100,200)
-bq.Text="● Запуск..."
+bq.Text="● Starting..."
 bL(0,#br)
 bH(true)
 bz()
@@ -714,9 +714,9 @@ bs=false
 Z=false
 bu=true
 bv=false
-aO.Text="НЕАКТИВЕН"
+aO.Text="INACTIVE"
 aM.BackgroundColor3=Color3.fromRGB(255,50,150)
-bq.Text="● Остановлен"
+bq.Text="● Stopped"
 bL(0,#br)
 bH(false)
 if bx then task.cancel(bx) bx=nil end
@@ -735,7 +735,7 @@ if not bs then return end
 if not bv then return end
 local b0=tonumber(bi.Text)or 4
 b0=math.max(b0,0)
-aO.Text="КУЛДАУН"
+aO.Text="COOLDOWN"
 aM.BackgroundColor3=Color3.fromRGB(255,200,100)
 task.wait(0.5)
 local b1=bZ:WaitForChild("HumanoidRootPart",5)
@@ -744,16 +744,16 @@ task.spawn(function()bF()end)
 bx=task.spawn(function()
 for b2=b0,1,-1 do
 if not bs then return end
-bq.Text="● Кулдаун: "..b2.."с"
+bq.Text="● Cooldown: "..b2.."s"
 task.wait(1)
 end
 if bs and bv then
 bv=false
 bt=1
 bu=true
-aO.Text="АКТИВЕН ✨"
+aO.Text="ACTIVE ✨"
 aM.BackgroundColor3=Color3.fromRGB(255,100,200)
-bq.Text="● Продолжаем..."
+bq.Text="● Continuing..."
 bz()
 bP(bt)
 end
@@ -770,7 +770,7 @@ if aa then ba()end
 if ad then ad:Destroy() ad=nil end
 end)
 
-warn("🌸 AutoFarm loaded")
+warn("🌸 AutoFarm PRO loaded. RightAlt - hide GUI.")
 end
 end
 ObfuscatedScript()
